@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
 
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/style.css?v=3">
 </head>
 <body>
 
@@ -93,110 +93,77 @@
       <p class="section__subtitle animate-fade-in">Was ich anbiete</p>
       <h2 class="section__title animate-fade-in">Leistungen & Preise</h2>
 
-      <div class="services__grid">
-        <div class="service-card animate-fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M12 3C7 3 3 7 3 12s4 9 9 9 9-4 9-9-4-9-9-9z"/>
-              <path d="M12 8v4l3 3"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Maniküre</h3>
-          <p class="service-card__desc">Klassische Maniküre mit professioneller Nagelpflege für gepflegte, natürliche Nägel.</p>
-          <span class="service-card__price">30 €</span>
+      <div class="services__list animate-fade-in">
+        <!-- Maniküre -->
+        <div class="service-item">
+          <span class="service-item__name">Maniküre</span>
+          <span class="service-item__dots"></span>
+          <span class="service-item__price">30,00 €</span>
         </div>
 
-        <div class="service-card animate-fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78L12 21.23l8.84-8.84a5.5 5.5 0 0 0 0-7.78z"/>
-            </svg>
+        <!-- Maniküre + Gelverstärkung -->
+        <div class="service-group">
+          <h3 class="service-group__title">Maniküre + Gelverstärkung</h3>
+          <div class="service-item service-item--sub">
+            <span class="service-item__bullet">•</span>
+            <span class="service-item__name">Kurze bis mittellange Nägel</span>
+            <span class="service-item__dots"></span>
+            <span class="service-item__price">55,00 €</span>
           </div>
-          <h3 class="service-card__title">Maniküre + Gel kurz/mittel</h3>
-          <p class="service-card__desc">Maniküre mit Gelverstärkung für kurze bis mittellange Nägel — stabil und gepflegt.</p>
-          <span class="service-card__price">55 €</span>
+          <div class="service-item service-item--sub">
+            <span class="service-item__bullet">•</span>
+            <span class="service-item__name">Längere Nägel</span>
+            <span class="service-item__dots"></span>
+            <span class="service-item__price">60,00 €</span>
+          </div>
         </div>
 
-        <div class="service-card animate-fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
-            </svg>
+        <!-- Maniküre + Gelverstärkung + Farbe/einfaches Design -->
+        <div class="service-group">
+          <h3 class="service-group__title">Maniküre + Gelverstärkung <span class="service-group__extra">+ Farbe / einfaches Design</span></h3>
+          <div class="service-item service-item--sub">
+            <span class="service-item__bullet">•</span>
+            <span class="service-item__name">Kurze bis mittellange Nägel</span>
+            <span class="service-item__dots"></span>
+            <span class="service-item__price">60,00 €</span>
           </div>
-          <h3 class="service-card__title">Maniküre + Gel lang</h3>
-          <p class="service-card__desc">Maniküre mit Gelverstärkung für lange Nägel — Halt und Eleganz vereint.</p>
-          <span class="service-card__price">60 €</span>
+          <div class="service-item service-item--sub">
+            <span class="service-item__bullet">•</span>
+            <span class="service-item__name">Längere Nägel</span>
+            <span class="service-item__dots"></span>
+            <span class="service-item__price">65,00 €</span>
+          </div>
         </div>
 
-        <div class="service-card animate-fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <circle cx="12" cy="12" r="3"/>
-              <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83"/>
-            </svg>
+        <!-- Maniküre + Gelverstärkung + aufwändiges Design -->
+        <div class="service-group">
+          <h3 class="service-group__title">Maniküre + Gelverstärkung <span class="service-group__extra">+ aufwändiges Design</span></h3>
+          <div class="service-item service-item--sub">
+            <span class="service-item__bullet">•</span>
+            <span class="service-item__name">Kurze bis mittellange Nägel</span>
+            <span class="service-item__dots"></span>
+            <span class="service-item__price">65,00 €</span>
           </div>
-          <h3 class="service-card__title">Gel kurz/mittel + Farbe</h3>
-          <p class="service-card__desc">Maniküre mit Gelverstärkung für kurze/mittellange Nägel plus Farbe oder einfaches Design.</p>
-          <span class="service-card__price">60 €</span>
+          <div class="service-item service-item--sub">
+            <span class="service-item__bullet">•</span>
+            <span class="service-item__name">Längere Nägel</span>
+            <span class="service-item__dots"></span>
+            <span class="service-item__price">70,00 €</span>
+          </div>
         </div>
 
-        <div class="service-card animate-fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2z"/>
-              <path d="M8 14s1.5 2 4 2 4-2 4-2"/>
-              <line x1="9" y1="9" x2="9.01" y2="9"/>
-              <line x1="15" y1="9" x2="15.01" y2="9"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Gel lang + Farbe</h3>
-          <p class="service-card__desc">Maniküre mit Gelverstärkung für lange Nägel plus Farbe oder einfaches Design.</p>
-          <span class="service-card__price">65 €</span>
+        <!-- Nagelverlängerung -->
+        <div class="service-item">
+          <span class="service-item__name"><strong>Nagelverlängerung Aufpreis</strong></span>
+          <span class="service-item__dots"></span>
+          <span class="service-item__price">10,00 €</span>
         </div>
 
-        <div class="service-card animate-fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <polygon points="12 2 15.09 8.26 22 9.27 17 14.14 18.18 21.02 12 17.77 5.82 21.02 7 14.14 2 9.27 8.91 8.26 12 2"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Gel kurz/mittel + Design</h3>
-          <p class="service-card__desc">Maniküre mit Gelverstärkung für kurze/mittellange Nägel plus aufwändiges, individuelles Design.</p>
-          <span class="service-card__price">65 €</span>
-        </div>
-
-        <div class="service-card animate-fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Gel lang + Design</h3>
-          <p class="service-card__desc">Maniküre mit Gelverstärkung für lange Nägel plus aufwändiges, individuelles Design.</p>
-          <span class="service-card__price">70 €</span>
-        </div>
-
-        <div class="service-card animate-fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M12 20h9"/>
-              <path d="M16.5 3.5a2.121 2.121 0 0 1 3 3L7 19l-4 1 1-4L16.5 3.5z"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Nagelverlängerung</h3>
-          <p class="service-card__desc">Aufpreis für Nagelverlängerung — für extra Länge nach deinem Wunsch.</p>
-          <span class="service-card__price">+10 €</span>
-        </div>
-
-        <div class="service-card animate-fade-in">
-          <div class="service-card__icon">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="32" height="32">
-              <path d="M14.7 6.3a1 1 0 0 0 0 1.4l1.6 1.6a1 1 0 0 0 1.4 0l3.77-3.77a6 6 0 0 1-7.94 7.94l-6.91 6.91a2.12 2.12 0 0 1-3-3l6.91-6.91a6 6 0 0 1 7.94-7.94l-3.76 3.76z"/>
-            </svg>
-          </div>
-          <h3 class="service-card__title">Nagelreparatur</h3>
-          <p class="service-card__desc">Schnelle Reparatur außerhalb der Garantiezeit — einzelne Nägel wieder in Form.</p>
-          <span class="service-card__price">5 €</span>
+        <!-- Nagelreparatur -->
+        <div class="service-item">
+          <span class="service-item__name">Nagelreparatur außerhalb der Garantiezeit</span>
+          <span class="service-item__dots"></span>
+          <span class="service-item__price">5,00 €</span>
         </div>
       </div>
     </div>
