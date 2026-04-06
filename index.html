@@ -104,10 +104,14 @@
 
       <div class="services__list animate-fade-in">
         <!-- Maniküre -->
-        <div class="service-item">
-          <span class="service-item__name">Maniküre</span>
-          <span class="service-item__dots"></span>
-          <span class="service-item__price">30,00 €</span>
+        <div class="service-group">
+          <h3 class="service-group__title">Maniküre</h3>
+          <div class="service-item service-item--sub">
+            <span class="service-item__bullet">•</span>
+            <span class="service-item__name">Komplette Maniküre</span>
+            <span class="service-item__dots"></span>
+            <span class="service-item__price">30,00 €</span>
+          </div>
         </div>
 
         <!-- Maniküre + Gelverstärkung -->
@@ -162,17 +166,25 @@
         </div>
 
         <!-- Nagelverlängerung -->
-        <div class="service-item">
-          <span class="service-item__name"><strong>Nagelverlängerung Aufpreis</strong></span>
-          <span class="service-item__dots"></span>
-          <span class="service-item__price">10,00 €</span>
+        <div class="service-group">
+          <h3 class="service-group__title">Nagelverlängerung</h3>
+          <div class="service-item service-item--sub">
+            <span class="service-item__bullet">•</span>
+            <span class="service-item__name">Aufpreis zur gewählten Leistung</span>
+            <span class="service-item__dots"></span>
+            <span class="service-item__price">+10,00 €</span>
+          </div>
         </div>
 
         <!-- Nagelreparatur -->
-        <div class="service-item">
-          <span class="service-item__name">Nagelreparatur außerhalb der Garantiezeit</span>
-          <span class="service-item__dots"></span>
-          <span class="service-item__price">5,00 €</span>
+        <div class="service-group">
+          <h3 class="service-group__title">Nagelreparatur</h3>
+          <div class="service-item service-item--sub">
+            <span class="service-item__bullet">•</span>
+            <span class="service-item__name">Außerhalb der Garantiezeit (pro Nagel)</span>
+            <span class="service-item__dots"></span>
+            <span class="service-item__price">5,00 €</span>
+          </div>
         </div>
       </div>
     </div>
@@ -181,23 +193,6 @@
   <!-- ========== ÜBER MICH ========== -->
   <section class="about section" id="ueber-mich">
     <div class="container about__container">
-      <div class="about__image animate-fade-in">
-        <div class="about__image-placeholder">
-          <svg viewBox="0 0 200 200" width="200" height="200" fill="none">
-            <rect width="200" height="200" rx="20" fill="url(#aboutGrad)"/>
-            <circle cx="100" cy="75" r="35" fill="rgba(255,255,255,0.3)"/>
-            <ellipse cx="100" cy="155" rx="50" ry="35" fill="rgba(255,255,255,0.3)"/>
-            <defs>
-              <linearGradient id="aboutGrad" x1="0" y1="0" x2="200" y2="200">
-                <stop offset="0%" stop-color="var(--clr-primary)"/>
-                <stop offset="100%" stop-color="var(--clr-accent)"/>
-              </linearGradient>
-            </defs>
-          </svg>
-          <span>Olga Görzen</span>
-        </div>
-      </div>
-
       <div class="about__content animate-fade-in">
         <p class="section__subtitle">Über mich</p>
         <h2 class="section__title section__title--left">Olga Görzen</h2>
@@ -483,11 +478,11 @@
         <div class="contact__hours">
           <h3>Öffnungszeiten</h3>
           <table class="contact__hours-table">
-            <tr><td>Montag</td><td>09:00 – 19:00 Uhr</td></tr>
-            <tr><td>Dienstag</td><td>09:00 – 19:00 Uhr</td></tr>
-            <tr><td>Mittwoch</td><td>09:00 – 19:00 Uhr</td></tr>
-            <tr><td>Donnerstag</td><td>09:00 – 19:00 Uhr</td></tr>
-            <tr><td>Freitag</td><td>09:00 – 19:00 Uhr</td></tr>
+            <tr><td>Montag</td><td>09:00 – 16:00 Uhr</td></tr>
+            <tr><td>Dienstag</td><td>09:00 – 16:00 Uhr</td></tr>
+            <tr><td>Mittwoch</td><td>09:00 – 16:00 Uhr</td></tr>
+            <tr><td>Donnerstag</td><td>09:00 – 16:00 Uhr</td></tr>
+            <tr><td>Freitag</td><td>09:00 – 16:00 Uhr</td></tr>
             <tr class="contact__hours-closed"><td>Samstag</td><td>Geschlossen</td></tr>
             <tr class="contact__hours-closed"><td>Sonntag</td><td>Geschlossen</td></tr>
           </table>

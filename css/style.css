@@ -492,42 +492,9 @@ input, select, textarea {
 
 /* ===== ABOUT ===== */
 .about__container {
-  display: grid;
-  grid-template-columns: 1fr;
-  gap: 3rem;
-  align-items: center;
-}
-
-.about__image {
-  display: flex;
-  justify-content: center;
-}
-
-.about__image-placeholder {
-  position: relative;
-  width: 280px;
-  height: 320px;
-  border-radius: var(--radius-lg);
-  background: linear-gradient(135deg, var(--clr-primary-light), var(--clr-primary));
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
-  box-shadow: var(--shadow-lg);
-}
-
-.about__image-placeholder svg {
-  opacity: 0.6;
-}
-
-.about__image-placeholder span {
-  position: absolute;
-  bottom: 1.5rem;
-  font-family: var(--ff-heading);
-  font-size: var(--fs-lg);
-  color: var(--clr-white);
-  font-weight: 600;
+  display: block;
+  max-width: 700px;
+  margin: 0 auto;
 }
 
 .about__text {
@@ -999,10 +966,6 @@ input, select, textarea {
     gap: 3rem;
   }
 
-  .about__container {
-    grid-template-columns: 1fr 1.2fr;
-  }
-
   .reviews__grid {
     grid-template-columns: repeat(3, 1fr);
   }
@@ -1032,11 +995,6 @@ input, select, textarea {
 
   .hero__content {
     max-width: 800px;
-  }
-
-  .about__image-placeholder {
-    width: 360px;
-    height: 420px;
   }
 
   .contact__form-wrapper {
