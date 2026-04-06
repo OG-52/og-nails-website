@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Danke für deine Anfrage — OG Nails</title>
+  <meta name="robots" content="noindex, follow">
+
+  <!-- Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,600;1,400&family=Nunito:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+  <link rel="stylesheet" href="css/style.css?v=3">
+
+  <style>
+    .thankyou-page {
+      min-height: 100vh;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1.25rem;
+      text-align: center;
+    }
+
+    .thankyou__icon {
+      width: 80px;
+      height: 80px;
+      border-radius: 50%;
+      background: linear-gradient(135deg, var(--clr-primary-light), var(--clr-primary));
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      margin: 0 auto 2rem;
+      box-shadow: 0 8px 30px rgba(201, 168, 140, 0.35);
+    }
+
+    .thankyou__icon svg {
+      color: white;
+    }
+
+    .thankyou__title {
+      font-family: var(--ff-heading);
+      font-size: var(--fs-3xl);
+      color: var(--clr-text);
+      margin-bottom: 1rem;
+    }
+
+    .thankyou__subtitle {
+      font-size: var(--fs-sm);
+      font-weight: 600;
+      color: var(--clr-primary-dark);
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      margin-bottom: 1rem;
+    }
+
+    .thankyou__text {
+      font-size: var(--fs-md);
+      color: var(--clr-text-light);
+      line-height: 1.8;
+      max-width: 480px;
+      margin: 0 auto 2.5rem;
+    }
+
+    .thankyou__actions {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      justify-content: center;
+    }
+
+    .thankyou__divider {
+      width: 60px;
+      height: 3px;
+      background: linear-gradient(135deg, var(--clr-primary-dark), var(--clr-accent));
+      border-radius: 2px;
+      margin: 1.5rem auto;
+    }
+
+    .thankyou__hours {
+      font-size: var(--fs-xs);
+      color: var(--clr-text-light);
+      margin-top: 1.5rem;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ========== NAVIGATION ========== -->
+  <header class="header header--scrolled" id="header">
+    <nav class="nav container">
+      <a href="index.html" class="nav__logo">
+        <span class="nav__logo-text">OG <span class="nav__logo-accent">Nails</span></span>
+      </a>
+    </nav>
+  </header>
+
+  <!-- ========== THANK YOU ========== -->
+  <main class="thankyou-page">
+
+    <div class="thankyou__icon">
+      <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"
+           width="38" height="38" stroke-linecap="round" stroke-linejoin="round">
+        <polyline points="20 6 9 17 4 12"/>
+      </svg>
+    </div>
+
+    <p class="thankyou__subtitle">Anfrage erhalten</p>
+    <h1 class="thankyou__title">Vielen Dank! 💅</h1>
+
+    <div class="thankyou__divider"></div>
+
+    <p class="thankyou__text">
+      Deine Terminanfrage ist bei mir angekommen. Ich melde mich
+      so schnell wie möglich per WhatsApp oder Telefon bei dir —
+      in der Regel noch am selben Tag.
+    </p>
+
+    <div class="thankyou__actions">
+      <a href="https://wa.me/4915238931238" class="btn btn--primary" target="_blank" rel="noopener">
+        Direkt auf WhatsApp
+      </a>
+      <a href="index.html" class="btn btn--outline">
+        Zurück zur Startseite
+      </a>
+    </div>
+
+    <p class="thankyou__hours">
+      Erreichbar: Montag – Freitag, 09:00 – 19:00 Uhr
+    </p>
+
+  </main>
+
+</body>
+</html>

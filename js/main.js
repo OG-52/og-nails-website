@@ -110,6 +110,8 @@
   });
 
   // ===== FORM VALIDATION & SUBMIT =====
+  // Validates required fields, then allows native form POST to Formspree.
+  // Formspree redirects to danke.html on success via the hidden _next field.
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
@@ -125,6 +127,7 @@
       var name = contactForm.querySelector('#name');
       var phone = contactForm.querySelector('#phone');
       var service = contactForm.querySelector('#service');
+      var email = contactForm.querySelector('#email');
 
       if (!name.value.trim()) {
         name.classList.add('error');
@@ -141,31 +144,22 @@
         isValid = false;
       }
 
-      var email = contactForm.querySelector('#email');
       if (email.value && !isValidEmail(email.value)) {
         email.classList.add('error');
         isValid = false;
       }
 
       if (!isValid) {
-        // Focus first error field
         var firstError = contactForm.querySelector('.error');
         if (firstError) firstError.focus();
         return;
       }
 
-      // Show success message
-      formSuccess.classList.add('show');
-      contactForm.querySelector('button[type="submit"]').disabled = true;
-      contactForm.querySelector('button[type="submit"]').textContent = 'Gesendet!';
-
-      // Reset form after delay
-      setTimeout(function () {
-        contactForm.reset();
-        formSuccess.classList.remove('show');
-        contactForm.querySelector('button[type="submit"]').disabled = false;
-        contactForm.querySelector('button[type="submit"]').textContent = 'Anfrage senden';
-      }, 5000);
+      // Validation passed — submit natively to Formspree
+      var submitBtn = contactForm.querySelector('button[type="submit"]');
+      submitBtn.disabled = true;
+      submitBtn.textContent = 'Wird gesendet…';
+      contactForm.submit();
     });
   }
 
