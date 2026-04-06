@@ -167,6 +167,35 @@
     return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
   }
 
+  // ===== STICKY MOBILE CTA BAR =====
+  // Appears after 600px scroll on mobile; hides when footer is in view.
+  var ctaBar = document.getElementById('cta-bar');
+  var siteFooter = document.querySelector('.footer');
+
+  if (ctaBar && siteFooter) {
+    function updateCtaBar() {
+      if (window.innerWidth >= 768) {
+        ctaBar.style.display = 'none';
+        return;
+      }
+      ctaBar.style.display = 'block';
+      ctaBar.setAttribute('aria-hidden', 'false');
+
+      var footerTop = siteFooter.getBoundingClientRect().top + window.scrollY;
+      var footerVisible = window.scrollY + window.innerHeight >= footerTop;
+
+      if (window.scrollY > 600 && !footerVisible) {
+        ctaBar.classList.add('cta-bar--visible');
+      } else {
+        ctaBar.classList.remove('cta-bar--visible');
+      }
+    }
+
+    window.addEventListener('scroll', updateCtaBar, { passive: true });
+    window.addEventListener('resize', updateCtaBar, { passive: true });
+    updateCtaBar();
+  }
+
   // ===== ACTIVE NAV LINK ON SCROLL =====
   var sections = document.querySelectorAll('section[id]');
 
