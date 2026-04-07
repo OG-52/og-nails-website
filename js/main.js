@@ -110,11 +110,15 @@
   });
 
   // ===== FORM VALIDATION & SUBMIT =====
-  // Validates required fields, then allows native form POST to Formspree.
-  // Formspree redirects to danke.html on success via the hidden _next field.
+  // Validates required fields, then POSTs JSON to Formspree via fetch.
+  // Success: shows in-page confirmation. Error: shows alert with fallback contact.
   if (contactForm) {
     contactForm.addEventListener('submit', function (e) {
       e.preventDefault();
+
+      // Honeypot check — bail if filled by a bot
+      var gotcha = contactForm.querySelector('input[name="_gotcha"]');
+      if (gotcha && gotcha.value) return;
 
       // Reset errors
       var inputs = contactForm.querySelectorAll('input, select, textarea');
@@ -155,11 +159,46 @@
         return;
       }
 
-      // Validation passed — submit natively to Formspree
+      // Validation passed — POST to Formspree
       var submitBtn = contactForm.querySelector('button[type="submit"]');
       submitBtn.disabled = true;
       submitBtn.textContent = 'Wird gesendet…';
-      contactForm.submit();
+
+      var formData = {
+        name: name.value.trim(),
+        phone: phone.value.trim(),
+        email: email.value.trim(),
+        service: service.value,
+        date: (contactForm.querySelector('#date') || {}).value || '',
+        message: (contactForm.querySelector('#message') || {}).value.trim()
+      };
+
+      fetch('https://formspree.io/f/mvzvlqrr', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+        body: JSON.stringify(formData)
+      })
+      .then(function (response) {
+        if (response.ok) {
+          formSuccess.classList.add('show');
+          submitBtn.textContent = 'Gesendet!';
+          setTimeout(function () {
+            contactForm.reset();
+            formSuccess.classList.remove('show');
+            submitBtn.disabled = false;
+            submitBtn.textContent = 'Anfrage senden';
+          }, 5000);
+        } else {
+          submitBtn.disabled = false;
+          submitBtn.textContent = 'Anfrage senden';
+          alert('Es gab ein Problem. Bitte ruf uns an oder schreib per WhatsApp.');
+        }
+      })
+      .catch(function () {
+        submitBtn.disabled = false;
+        submitBtn.textContent = 'Anfrage senden';
+        alert('Keine Verbindung. Bitte ruf uns an oder schreib per WhatsApp.');
+      });
     });
   }
 
