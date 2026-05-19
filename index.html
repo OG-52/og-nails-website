@@ -7,7 +7,12 @@
 <meta name="description" content="OG Nails — Premium Nageldesign in Simbach am Inn. Persönlich, hochwertig, mit über 5 Jahren Erfahrung." />
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=DM+Serif+Display:ital@0;1&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+<!-- React + Babel for the Tweaks panel -->
+<script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
 <style>
   :root{
     --cream:#faf7f4;
@@ -369,6 +374,299 @@
     .hero-visual .tag-card{bottom:auto;top:-22px;left:auto;right:-6px}
   }
 </style>
+
+<!-- ============================================================
+     TWEAKS — three expressive controls that reshape the design:
+       data-mood  : rose | noir | bordeaux
+       data-voice : editorial | couture | bold
+       data-photo : natural | warm | hushed
+     ============================================================ -->
+<style id="tweak-overrides">
+
+  /* ============ MOOD · Mocha Noir ============ */
+  html[data-mood="noir"]{
+    --cream:#17110d;
+    --cream-2:#1f1814;
+    --rose:#d8b89a;
+    --rose-deep:#e8c9ad;
+    --rose-soft:#3a2a1f;
+    --mocha:#f0e6da;
+    --mocha-soft:#9d8e7e;
+    --gold:#e6c878;
+    --line:#f0e6da14;
+    --line-strong:#f0e6da22;
+  }
+  /* Sections that were dark-on-light must STAY dark — push them deeper */
+  html[data-mood="noir"] .section-mocha,
+  html[data-mood="noir"] footer.site{
+    background:#0c0805 !important;
+    color:#f0e6da !important;
+  }
+  html[data-mood="noir"] footer.site .brand .word .name em{color:var(--rose)}
+  html[data-mood="noir"] footer.site .brand .word .loc,
+  html[data-mood="noir"] footer.site p,
+  html[data-mood="noir"] footer.site ul a,
+  html[data-mood="noir"] footer.site .bottom,
+  html[data-mood="noir"] footer.site .social a{color:#9d8e7e}
+  html[data-mood="noir"] footer.site h5{color:#f0e6da}
+  /* Buttons & details */
+  html[data-mood="noir"] .btn-primary{background:#f0e6da;color:#17110d}
+  html[data-mood="noir"] .btn-primary:hover{background:#fff}
+  html[data-mood="noir"] .btn-ghost{color:var(--mocha);border-color:#f0e6da33}
+  html[data-mood="noir"] .btn-ghost:hover{background:#f0e6da0d;border-color:var(--mocha)}
+  html[data-mood="noir"] .menu-btn{border-color:#f0e6da33}
+  html[data-mood="noir"] .menu-btn span,
+  html[data-mood="noir"] .menu-btn span::before,
+  html[data-mood="noir"] .menu-btn span::after{background:var(--mocha)}
+  /* Hero background washes (the hardcoded line colours need flipping) */
+  html[data-mood="noir"] .hero-bg .lines{background-image:linear-gradient(to right,#f0e6da08 1px,transparent 1px)}
+  html[data-mood="noir"] .hero-bg .glow.a{opacity:.32}
+  html[data-mood="noir"] .hero-bg .glow.b{opacity:.4}
+  /* Cards & menu */
+  html[data-mood="noir"] .menu-card,
+  html[data-mood="noir"] .usp,
+  html[data-mood="noir"] .review,
+  html[data-mood="noir"] form.booking,
+  html[data-mood="noir"] .info .ico{background:#1f1814;border-color:#f0e6da14}
+  html[data-mood="noir"] .menu-row .leader{border-bottom-color:#f0e6da26}
+  html[data-mood="noir"] .menu-section{border-bottom-color:#f0e6da14}
+  html[data-mood="noir"] .menu-card::before,
+  html[data-mood="noir"] .menu-card::after,
+  html[data-mood="noir"] .menu-extras .pill{border-color:var(--rose)}
+  /* Map */
+  html[data-mood="noir"] .map iframe{filter:saturate(.4) contrast(.95) brightness(.55) sepia(.35) hue-rotate(-10deg)}
+  html[data-mood="noir"] .map{background:#1f1814}
+  /* Form fields */
+  html[data-mood="noir"] form.booking input,
+  html[data-mood="noir"] form.booking select,
+  html[data-mood="noir"] form.booking textarea{color:var(--mocha);border-bottom-color:#f0e6da33}
+  html[data-mood="noir"] form.booking input::placeholder,
+  html[data-mood="noir"] form.booking textarea::placeholder{color:#6d6155}
+  html[data-mood="noir"] form.booking select option{background:#1f1814;color:var(--mocha)}
+  /* Header glass turns smoky */
+  html[data-mood="noir"] header.site{background:rgba(23,17,13,.78)}
+  html[data-mood="noir"] header.site .brand .name em{color:var(--rose)}
+  /* Hero stat num em */
+  html[data-mood="noir"] .hero-stats .num em{color:var(--rose-deep)}
+  /* Marquee */
+  html[data-mood="noir"] .marquee{background:#1f1814;border-color:#f0e6da14}
+
+  /* ============ MOOD · Bordeaux ============ */
+  html[data-mood="bordeaux"]{
+    --cream:#fbf6f3;
+    --cream-2:#f1e3df;
+    --rose:#9a3b3b;
+    --rose-deep:#722424;
+    --rose-soft:#e8cdc8;
+    --mocha:#321416;
+    --mocha-soft:#7e5d5d;
+    --gold:#b48845;
+    --line:#32141614;
+    --line-strong:#32141626;
+  }
+  html[data-mood="bordeaux"] .about-work .aw-tag i{background:var(--gold);box-shadow:0 0 0 4px #b8884522}
+  html[data-mood="bordeaux"] .hero-bg .glow.a{background:radial-gradient(circle,#e8cdc8 0%,transparent 70%)}
+  html[data-mood="bordeaux"] .hero-bg .glow.b{background:radial-gradient(circle,#b8884533 0%,transparent 70%)}
+  html[data-mood="bordeaux"] .about-work .aw-b,
+  html[data-mood="bordeaux"] .about-work .aw-c{border-color:var(--cream)}
+
+  /* ============ VOICE · Couture (Cormorant + Inter) ============ */
+  html[data-voice="couture"] body{font-family:'Inter',system-ui,sans-serif}
+  html[data-voice="couture"] h1,
+  html[data-voice="couture"] h2,
+  html[data-voice="couture"] h3,
+  html[data-voice="couture"] .serif,
+  html[data-voice="couture"] .marquee-track,
+  html[data-voice="couture"] .hero-stats .num,
+  html[data-voice="couture"] .menu-row .price,
+  html[data-voice="couture"] .menu-section-title h3,
+  html[data-voice="couture"] .menu-section-title .n,
+  html[data-voice="couture"] .review .quote,
+  html[data-voice="couture"] .review .avatar,
+  html[data-voice="couture"] .brand .word .name,
+  html[data-voice="couture"] .menu-card-title,
+  html[data-voice="couture"] footer.site h5,
+  html[data-voice="couture"] .menu-extras .pill em,
+  html[data-voice="couture"] [style*="Playfair"]{
+    font-family:'Cormorant Garamond','Playfair Display',serif !important;
+    letter-spacing:0 !important;
+    font-weight:500;
+  }
+  html[data-voice="couture"] h1{font-weight:500;letter-spacing:-.005em !important}
+  html[data-voice="couture"] em{font-family:'Cormorant Garamond','Playfair Display',serif !important;font-style:italic;font-weight:500}
+
+  /* ============ VOICE · Bold (DM Serif Display + Nunito) ============ */
+  html[data-voice="bold"] h1,
+  html[data-voice="bold"] h2,
+  html[data-voice="bold"] h3,
+  html[data-voice="bold"] .serif,
+  html[data-voice="bold"] .marquee-track,
+  html[data-voice="bold"] .hero-stats .num,
+  html[data-voice="bold"] .menu-row .price,
+  html[data-voice="bold"] .menu-section-title h3,
+  html[data-voice="bold"] .review .quote,
+  html[data-voice="bold"] .brand .word .name,
+  html[data-voice="bold"] footer.site h5,
+  html[data-voice="bold"] [style*="Playfair"]{
+    font-family:'DM Serif Display','Playfair Display',serif !important;
+    font-weight:400 !important;
+    letter-spacing:-.025em !important;
+  }
+  html[data-voice="bold"] h1{line-height:.95 !important}
+  html[data-voice="bold"] em{font-family:'DM Serif Display','Playfair Display',serif !important;font-style:italic;font-weight:400}
+  html[data-voice="bold"] .menu-section-title .n,
+  html[data-voice="bold"] .hero-stats .num em{font-family:'DM Serif Display',serif !important;font-style:italic;font-weight:400}
+
+  /* ============ PHOTO TREATMENT ============ */
+  /* All <img> tags transition smoothly when the filter swaps. */
+  img{transition:filter .5s ease}
+  html[data-photo="warm"]  img{filter:sepia(.18) saturate(1.08) contrast(1.03) brightness(.99)}
+  html[data-photo="hushed"] img{filter:saturate(.62) contrast(.96) brightness(1.05) hue-rotate(-3deg)}
+
+  /* The tweak panel itself should sit above the WhatsApp FAB. */
+  #tweaks-root{position:relative;z-index:80}
+</style>
+
+<!-- ============================================================
+     MOBILE OPTIMISATION (Hauptzielgruppe: Handy)
+     ============================================================ -->
+<style id="mobile-optim">
+  /* Sticky bottom action bar — mobile only. Two big tap targets:
+     Anrufen + WhatsApp — the two ways people actually book a salon. */
+  .m-actions{display:none}
+  .m-actions .lbl{font-weight:700;letter-spacing:.04em}
+
+  @media (max-width:768px){
+    /* iOS Safari address bar safety + safe-area for notched phones */
+    html{scroll-padding-top:calc(var(--header-h) + 8px)}
+    body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+
+    /* Compact header on mobile — monogram + name only, no locality line */
+    header.site{height:64px}
+    :root{--header-h:64px}
+    .brand .mark{width:36px;height:36px}
+    .brand .word .name{font-size:19px}
+    .brand .word .loc{display:none}
+
+    /* Mobile menu: spans full svh, adds direct contact actions at the bottom */
+    .mobile-menu{padding:32px 22px calc(28px + env(safe-area-inset-bottom,0px))}
+    .mobile-menu a{font-size:28px;padding:12px 0}
+    .mobile-menu .m-contact{margin-top:auto;padding-top:24px;border-top:1px solid var(--line);display:flex;gap:10px}
+    .mobile-menu .m-contact a{flex:1;text-align:center;font-family:'Nunito',sans-serif;font-size:13px;font-weight:600;letter-spacing:.06em;padding:14px 12px;border:0;border-radius:999px;display:inline-flex;align-items:center;justify-content:center;gap:8px}
+
+    /* Hero — small-viewport-height handles iOS chrome correctly */
+    .hero{min-height:100svh;padding-top:calc(var(--header-h) + 28px);padding-bottom:48px}
+    .hero-grid{gap:36px}
+    h1{font-size:clamp(40px,9.5vw,56px);line-height:1}
+    .hero-sub{margin:22px 0 28px;font-size:16px}
+    .scroll-cue{display:none}
+
+    /* CTAs — full-width, generous tap targets (≥48px) */
+    .hero-ctas{gap:10px}
+    .hero-ctas .btn{width:100%;justify-content:center;padding:16px 22px;font-size:14px;letter-spacing:.08em}
+    .btn:active{transform:scale(.97)}
+
+    /* Hero stats: three columns side-by-side with dividers (was stacked) */
+    .hero-stats{grid-template-columns:repeat(3,1fr);gap:0;max-width:none;padding-top:24px}
+    .hero-stats .stat{padding:0 8px;display:flex;flex-direction:column;gap:6px}
+    .hero-stats .stat + .stat{padding-left:12px;border-left:1px solid var(--line);border-top:0;padding-top:0;margin-top:0}
+    .hero-stats .num{font-size:26px;line-height:1}
+    .hero-stats .lbl{font-size:9.5px;letter-spacing:.16em}
+    .hero-stats .stars{font-size:13px;letter-spacing:2px}
+
+    /* Hero photo composition — tidier square aspect on mobile */
+    .hero-visual{aspect-ratio:1/1;max-width:100%}
+    .hero-visual .photo.main{inset:0 22% 22% 0}
+    .hero-visual .photo.alt{inset:32% 0 0 30%;border-width:5px}
+    .hero-visual .photo.frame{inset:10% -2% 18% 14%}
+
+    /* Tighter sections + section heads */
+    section{padding:72px 0}
+    .section-head{gap:14px;margin-bottom:44px}
+    .section-head h2{font-size:clamp(30px,7.5vw,40px)}
+
+    /* Menu card: tighter padding, larger price hit area */
+    .menu-card{padding:30px 22px}
+    .menu-card::before,.menu-card::after{width:28px;height:28px;top:10px;left:10px}
+    .menu-card::after{top:auto;left:auto;bottom:10px;right:10px}
+    .menu-row{padding:11px 0;font-size:15.5px;align-items:baseline}
+    .menu-row .desc{font-size:13px;width:100%;order:3;flex-basis:100%}
+    .menu-row .price{font-size:19px}
+    .menu-section-title h3{font-size:21px}
+    .menu-extras{flex-direction:column;align-items:stretch;gap:10px}
+    .menu-extras .pill{justify-content:center;padding:10px 14px}
+
+    /* About: portrait-photos card scaled to viewport */
+    .about-work{max-width:100%;aspect-ratio:4/4.5}
+    .about-work .aw-tag{font-size:10px;padding:7px 14px;bottom:-14px}
+
+    /* Gallery: bigger row height for legibility */
+    .gallery{grid-auto-rows:78px;gap:8px}
+
+    /* Reviews: comfortable padding */
+    .review{padding:28px 24px}
+    .review .quote{font-size:18px}
+
+    /* Contact: form sizing + IMPORTANT iOS zoom-prevention (≥16px on inputs) */
+    form.booking{padding:28px 22px}
+    form.booking input,
+    form.booking select,
+    form.booking textarea{font-size:16px;padding:12px 0 14px}
+    form.booking .submit .btn{width:100%;justify-content:center}
+    .info-list{gap:18px}
+    .hours .row{padding:8px 0}
+
+    /* Marquee: slower + slightly smaller to fit one full cycle on screen */
+    .marquee{padding:22px 0}
+    .marquee-track{font-size:22px;animation-duration:48s;gap:36px}
+    .marquee-track span{gap:36px}
+
+    /* Map: a bit shorter on phone */
+    .map{height:280px}
+    .map .pin{font-size:11px;padding:8px 14px}
+
+    /* Hide the FAB — the sticky bar replaces it */
+    .fab{display:none}
+
+    /* Sticky bottom CTA bar — the workhorse for mobile bookings */
+    .m-actions{
+      display:flex;align-items:stretch;gap:8px;
+      position:fixed;left:0;right:0;bottom:0;z-index:55;
+      padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));
+      background:rgba(250,247,244,.92);
+      backdrop-filter:saturate(1.2) blur(14px);
+      -webkit-backdrop-filter:saturate(1.2) blur(14px);
+      border-top:1px solid var(--line-strong);
+    }
+    .m-actions a{
+      flex:1;display:inline-flex;align-items:center;justify-content:center;gap:10px;
+      padding:14px 12px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.04em;
+      transition:transform .15s;
+    }
+    .m-actions a:active{transform:scale(.97)}
+    .m-actions a.call{background:transparent;color:var(--mocha);border:1px solid var(--line-strong)}
+    .m-actions a.wa{background:#25D366;color:#fff;flex:1.3}
+    .m-actions .ico{width:18px;height:18px;flex:none}
+
+    /* Footer: lighter on small phones */
+    footer.site{padding:56px 0 28px}
+    footer.site .top{gap:28px}
+  }
+
+  @media (max-width:480px){
+    footer.site .top{grid-template-columns:1fr;gap:24px}
+    .gallery{grid-template-columns:repeat(4,1fr);grid-auto-rows:70px}
+    .gallery .g1{grid-column:span 4;grid-row:span 4}
+    .gallery .g2,.gallery .g3,.gallery .g4,.gallery .g5,.gallery .g6{grid-column:span 2;grid-row:span 3}
+  }
+
+  /* Mood-aware bottom bar so dark mode looks correct */
+  @media (max-width:768px){
+    html[data-mood="noir"] .m-actions{background:rgba(23,17,13,.88);border-top-color:#f0e6da22}
+    html[data-mood="noir"] .m-actions a.call{color:var(--mocha);border-color:#f0e6da33}
+    html[data-mood="bordeaux"] .m-actions{background:rgba(251,246,243,.92)}
+  }
+</style>
 </head>
 <body>
 
@@ -419,7 +717,16 @@
   <a href="#galerie">Galerie</a>
   <a href="#bewertungen">Bewertungen</a>
   <a href="#kontakt">Kontakt</a>
-  <a href="https://wa.me/4915238931238" class="btn btn-rose">Termin buchen via WhatsApp</a>
+  <div class="m-contact">
+    <a href="tel:+4915238931238" class="btn btn-ghost">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7 2 2 0 011.72 2z"/></svg>
+      Anrufen
+    </a>
+    <a href="https://wa.me/4915238931238" class="btn btn-rose">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 003.6 17l-1.1 4.2 4.3-1.1A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 1112 20z"/></svg>
+      WhatsApp
+    </a>
+  </div>
 </nav>
 
 <!-- ============================================================
@@ -857,10 +1164,24 @@
   </div>
 </footer>
 
-<!-- WhatsApp FAB -->
+<!-- WhatsApp FAB (desktop/tablet only — mobile uses sticky bottom bar) -->
 <a class="fab" href="https://wa.me/4915238931238" aria-label="WhatsApp Kontakt">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 003.6 17l-1.1 4.2 4.3-1.1A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 1112 20zm4.5-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.1-.5 0a6.6 6.6 0 01-3.3-2.9c-.2-.4 0-.4.2-.6l.4-.4.2-.4v-.4l-.6-1.6c-.2-.4-.3-.3-.5-.3h-.4a.8.8 0 00-.6.3 2.5 2.5 0 00-.8 1.9 4.4 4.4 0 00.9 2.3 9.8 9.8 0 003.9 3.4c.5.2 1 .3 1.3.4a3.2 3.2 0 001.5 0 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c-.1-.1-.2-.2-.4-.3z"/></svg>
+  <svg width="30" height="30" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
+    <path d="M16 3C8.82 3 3 8.82 3 16c0 2.3.6 4.46 1.66 6.34L3 29l6.85-1.79A12.94 12.94 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.7c-1.96 0-3.78-.55-5.34-1.5l-.38-.23-4.07 1.07 1.08-3.97-.25-.41A10.69 10.69 0 015.3 16c0-5.9 4.8-10.7 10.7-10.7S26.7 10.1 26.7 16 21.9 26.7 16 26.7zm6.13-8c-.34-.17-1.99-.98-2.3-1.09-.3-.11-.53-.17-.75.17-.22.33-.86 1.08-1.06 1.31-.2.22-.39.25-.73.08-.34-.17-1.43-.53-2.72-1.68-1.01-.9-1.69-2-1.88-2.34-.2-.34-.02-.52.15-.69.16-.15.34-.4.51-.6.17-.2.23-.34.34-.56.11-.22.06-.42-.03-.59-.08-.17-.75-1.81-1.03-2.48-.27-.65-.55-.56-.75-.57-.19-.01-.41-.01-.64-.01-.22 0-.59.08-.9.41-.31.33-1.18 1.15-1.18 2.81 0 1.66 1.21 3.27 1.38 3.49.17.22 2.38 3.64 5.77 5.11.81.35 1.43.56 1.92.71.81.26 1.54.22 2.12.13.65-.1 1.99-.81 2.27-1.6.28-.79.28-1.46.2-1.6-.08-.14-.31-.22-.65-.39z"/>
+  </svg>
 </a>
+
+<!-- Sticky bottom action bar — mobile only (Anrufen + WhatsApp) -->
+<nav class="m-actions" aria-label="Schnellkontakt">
+  <a href="tel:+4915238931238" class="call">
+    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7 2 2 0 011.72 2z"/></svg>
+    <span class="lbl">Anrufen</span>
+  </a>
+  <a href="https://wa.me/4915238931238" class="wa">
+    <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 003.6 17l-1.1 4.2 4.3-1.1A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 1112 20zm4.5-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.1-.5 0a6.6 6.6 0 01-3.3-2.9c-.2-.4 0-.4.2-.6l.4-.4.2-.4v-.4l-.6-1.6c-.2-.4-.3-.3-.5-.3h-.4a.8.8 0 00-.6.3 2.5 2.5 0 00-.8 1.9 4.4 4.4 0 00.9 2.3 9.8 9.8 0 003.9 3.4c.5.2 1 .3 1.3.4a3.2 3.2 0 001.5 0 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c-.1-.1-.2-.2-.4-.3z"/></svg>
+    <span class="lbl">WhatsApp · Termin buchen</span>
+  </a>
+</nav>
 
 <script>
   // mobile menu
@@ -932,6 +1253,13 @@
     form.reset();
   });
 </script>
+
+<!-- ============================================================
+     TWEAKS panel mount + scripts
+     ============================================================ -->
+<div id="tweaks-root"></div>
+<script type="text/babel" src="tweaks-panel.jsx"></script>
+<script type="text/babel" src="tweaks-app.jsx"></script>
 
 </body>
 </html>
