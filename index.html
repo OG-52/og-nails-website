@@ -531,15 +531,13 @@
      MOBILE OPTIMISATION (Hauptzielgruppe: Handy)
      ============================================================ -->
 <style id="mobile-optim">
-  /* Sticky bottom action bar — mobile only. Two big tap targets:
-     Anrufen + WhatsApp — the two ways people actually book a salon. */
-  .m-actions{display:none}
-  .m-actions .lbl{font-weight:700;letter-spacing:.04em}
+  /* Sticky bar removed at user request — WhatsApp FAB handles mobile bookings
+     (same circular treatment as desktop). */
 
   @media (max-width:768px){
     /* iOS Safari address bar safety + safe-area for notched phones */
     html{scroll-padding-top:calc(var(--header-h) + 8px)}
-    body{padding-bottom:calc(72px + env(safe-area-inset-bottom,0px))}
+    body{overflow-x:hidden}
 
     /* Compact header on mobile — monogram + name only, no locality line */
     header.site{height:64px}
@@ -607,14 +605,20 @@
     .review{padding:28px 24px}
     .review .quote{font-size:18px}
 
-    /* Contact: form sizing + IMPORTANT iOS zoom-prevention (≥16px on inputs) */
-    form.booking{padding:28px 22px}
+    /* Contact section overflow safety — form + hours stay within viewport */
+    .info-list{gap:18px;width:100%;min-width:0}
+    .info{min-width:0}
+    .info .t{min-width:0;flex:1}
+    .info .t .v{word-break:break-word;overflow-wrap:break-word}
+    .hours{margin-top:28px;width:100%}
+    .hours .row{padding:8px 0;gap:14px;flex-wrap:wrap}
+    form.booking{width:100%;max-width:100%;padding:28px 22px}
+    form.booking label{min-width:0}
     form.booking input,
     form.booking select,
-    form.booking textarea{font-size:16px;padding:12px 0 14px}
+    form.booking textarea{width:100%;max-width:100%;min-width:0;font-size:16px;padding:12px 0 14px}
+    form.booking .submit{width:100%}
     form.booking .submit .btn{width:100%;justify-content:center}
-    .info-list{gap:18px}
-    .hours .row{padding:8px 0}
 
     /* Marquee: slower + slightly smaller to fit one full cycle on screen */
     .marquee{padding:22px 0}
@@ -625,28 +629,9 @@
     .map{height:280px}
     .map .pin{font-size:11px;padding:8px 14px}
 
-    /* Hide the FAB — the sticky bar replaces it */
-    .fab{display:none}
-
-    /* Sticky bottom CTA bar — the workhorse for mobile bookings */
-    .m-actions{
-      display:flex;align-items:stretch;gap:8px;
-      position:fixed;left:0;right:0;bottom:0;z-index:55;
-      padding:10px 12px calc(10px + env(safe-area-inset-bottom,0px));
-      background:rgba(250,247,244,.92);
-      backdrop-filter:saturate(1.2) blur(14px);
-      -webkit-backdrop-filter:saturate(1.2) blur(14px);
-      border-top:1px solid var(--line-strong);
-    }
-    .m-actions a{
-      flex:1;display:inline-flex;align-items:center;justify-content:center;gap:10px;
-      padding:14px 12px;border-radius:999px;font-size:14px;font-weight:600;letter-spacing:.04em;
-      transition:transform .15s;
-    }
-    .m-actions a:active{transform:scale(.97)}
-    .m-actions a.call{background:transparent;color:var(--mocha);border:1px solid var(--line-strong)}
-    .m-actions a.wa{background:#25D366;color:#fff;flex:1.3}
-    .m-actions .ico{width:18px;height:18px;flex:none}
+    /* FAB stays visible on mobile — circular WhatsApp button like desktop,
+       safe-area aware so it clears the iOS home indicator. */
+    .fab{bottom:calc(20px + env(safe-area-inset-bottom,0px));right:18px}
 
     /* Footer: lighter on small phones */
     footer.site{padding:56px 0 28px}
@@ -659,13 +644,6 @@
     .gallery .g1{grid-column:span 4;grid-row:span 4}
     .gallery .g2,.gallery .g3,.gallery .g4,.gallery .g5,.gallery .g6{grid-column:span 2;grid-row:span 3}
   }
-
-  /* Mood-aware bottom bar so dark mode looks correct */
-  @media (max-width:768px){
-    html[data-mood="noir"] .m-actions{background:rgba(23,17,13,.88);border-top-color:#f0e6da22}
-    html[data-mood="noir"] .m-actions a.call{color:var(--mocha);border-color:#f0e6da33}
-    html[data-mood="bordeaux"] .m-actions{background:rgba(251,246,243,.92)}
-  }
 </style>
 </head>
 <body>
@@ -674,12 +652,14 @@
 <svg width="0" height="0" style="position:absolute" aria-hidden="true">
   <defs>
     <symbol id="og-mark" viewBox="0 0 200 200">
-      <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="0.6" opacity=".3"/>
-      <ellipse cx="78" cy="100" rx="48" ry="58" fill="none" stroke="currentColor" stroke-width="3.2"/>
-      <ellipse cx="78" cy="100" rx="42" ry="52" fill="none" stroke="currentColor" stroke-width="0.6" opacity=".4"/>
-      <path d="M 175 70 A 48 58 0 1 0 175 130 L 175 100 L 140 100" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/>
-      <line x1="140" y1="96" x2="140" y2="104" stroke="currentColor" stroke-width="3.2"/>
-      <path d="M 122 100 l 4 -4 l 4 4 l -4 4 z" fill="currentColor" opacity=".75"/>
+      <!-- decorative outer ring -->
+      <circle cx="100" cy="100" r="94" fill="none" stroke="currentColor" stroke-width="0.5" opacity=".28"/>
+      <!-- O — left letterform -->
+      <ellipse cx="80" cy="100" rx="42" ry="56" fill="none" stroke="currentColor" stroke-width="3"/>
+      <!-- G — right letterform, interlocked (centres 40 apart, ~50% overlap) -->
+      <path d="M 162 78 A 42 56 0 1 0 162 122 L 162 100 L 138 100" fill="none" stroke="currentColor" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/>
+      <!-- diamond ornament at centre of overlap -->
+      <path d="M 100 100 l 3 -3 l 3 3 l -3 3 z" fill="currentColor" opacity=".8"/>
     </symbol>
   </defs>
 </svg>
@@ -717,16 +697,7 @@
   <a href="#galerie">Galerie</a>
   <a href="#bewertungen">Bewertungen</a>
   <a href="#kontakt">Kontakt</a>
-  <div class="m-contact">
-    <a href="tel:+4915238931238" class="btn btn-ghost">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7 2 2 0 011.72 2z"/></svg>
-      Anrufen
-    </a>
-    <a href="https://wa.me/4915238931238" class="btn btn-rose">
-      <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 003.6 17l-1.1 4.2 4.3-1.1A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 1112 20z"/></svg>
-      WhatsApp
-    </a>
-  </div>
+  <a href="https://wa.me/4915238931238" class="btn btn-rose" style="align-self:flex-start;margin-top:24px">Termin buchen via WhatsApp</a>
 </nav>
 
 <!-- ============================================================
@@ -1164,24 +1135,12 @@
   </div>
 </footer>
 
-<!-- WhatsApp FAB (desktop/tablet only — mobile uses sticky bottom bar) -->
+<!-- WhatsApp FAB (desktop + mobile) -->
 <a class="fab" href="https://wa.me/4915238931238" aria-label="WhatsApp Kontakt">
   <svg width="30" height="30" viewBox="0 0 32 32" fill="currentColor" aria-hidden="true">
     <path d="M16 3C8.82 3 3 8.82 3 16c0 2.3.6 4.46 1.66 6.34L3 29l6.85-1.79A12.94 12.94 0 0016 29c7.18 0 13-5.82 13-13S23.18 3 16 3zm0 23.7c-1.96 0-3.78-.55-5.34-1.5l-.38-.23-4.07 1.07 1.08-3.97-.25-.41A10.69 10.69 0 015.3 16c0-5.9 4.8-10.7 10.7-10.7S26.7 10.1 26.7 16 21.9 26.7 16 26.7zm6.13-8c-.34-.17-1.99-.98-2.3-1.09-.3-.11-.53-.17-.75.17-.22.33-.86 1.08-1.06 1.31-.2.22-.39.25-.73.08-.34-.17-1.43-.53-2.72-1.68-1.01-.9-1.69-2-1.88-2.34-.2-.34-.02-.52.15-.69.16-.15.34-.4.51-.6.17-.2.23-.34.34-.56.11-.22.06-.42-.03-.59-.08-.17-.75-1.81-1.03-2.48-.27-.65-.55-.56-.75-.57-.19-.01-.41-.01-.64-.01-.22 0-.59.08-.9.41-.31.33-1.18 1.15-1.18 2.81 0 1.66 1.21 3.27 1.38 3.49.17.22 2.38 3.64 5.77 5.11.81.35 1.43.56 1.92.71.81.26 1.54.22 2.12.13.65-.1 1.99-.81 2.27-1.6.28-.79.28-1.46.2-1.6-.08-.14-.31-.22-.65-.39z"/>
   </svg>
 </a>
-
-<!-- Sticky bottom action bar — mobile only (Anrufen + WhatsApp) -->
-<nav class="m-actions" aria-label="Schnellkontakt">
-  <a href="tel:+4915238931238" class="call">
-    <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.8" aria-hidden="true"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7 2 2 0 011.72 2z"/></svg>
-    <span class="lbl">Anrufen</span>
-  </a>
-  <a href="https://wa.me/4915238931238" class="wa">
-    <svg class="ico" viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M20.5 3.5A11 11 0 003.6 17l-1.1 4.2 4.3-1.1A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 1112 20zm4.5-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.1-.5 0a6.6 6.6 0 01-3.3-2.9c-.2-.4 0-.4.2-.6l.4-.4.2-.4v-.4l-.6-1.6c-.2-.4-.3-.3-.5-.3h-.4a.8.8 0 00-.6.3 2.5 2.5 0 00-.8 1.9 4.4 4.4 0 00.9 2.3 9.8 9.8 0 003.9 3.4c.5.2 1 .3 1.3.4a3.2 3.2 0 001.5 0 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c-.1-.1-.2-.2-.4-.3z"/></svg>
-    <span class="lbl">WhatsApp · Termin buchen</span>
-  </a>
-</nav>
 
 <script>
   // mobile menu
