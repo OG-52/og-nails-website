@@ -1,660 +1,937 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>OG Nails — Nageldesign in Simbach am Inn | Olga Görzen</title>
-  <meta name="description" content="OG Nails – Professionelles Nageldesign in Simbach am Inn. Maniküre, Gelverstärkung & individuelle Designs. Jetzt Termin buchen bei Olga Görzen.">
-  <meta name="keywords" content="Nagelstudio, Nageldesign, Simbach am Inn, Maniküre, Gelverstärkung, OG Nails, Olga Görzen">
-  <meta name="author" content="Olga Görzen">
+<meta charset="utf-8" />
+<title>OG Nails — Nageldesign Simbach am Inn · Olga Görzen</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="description" content="OG Nails — Premium Nageldesign in Simbach am Inn. Persönlich, hochwertig, mit über 5 Jahren Erfahrung." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf7f4;
+    --cream-2:#f3ede6;
+    --rose:#c9a88c;
+    --rose-deep:#b48d6e;
+    --rose-soft:#e6d5c4;
+    --mocha:#3d3027;
+    --mocha-soft:#7a6e63;
+    --gold:#d4af37;
+    --line:#3d302714;
+    --line-strong:#3d302726;
+    --header-h:78px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:var(--header-h)}
+  body{
+    margin:0;background:var(--cream);color:var(--mocha);
+    font-family:'Nunito',system-ui,sans-serif;font-weight:400;font-size:16px;line-height:1.65;
+    -webkit-font-smoothing:antialiased;
+  }
+  img{max-width:100%;display:block}
+  a{color:inherit;text-decoration:none}
+  button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
 
-  <!-- Canonical -->
-  <link rel="canonical" href="https://ognail-simbach.de">
+  /* =============== TYPE =============== */
+  .serif{font-family:'Playfair Display',serif;font-weight:500;letter-spacing:-.005em}
+  .eyebrow{
+    font-family:'Nunito';font-size:11px;font-weight:600;
+    letter-spacing:.32em;text-transform:uppercase;color:var(--rose-deep);
+    display:inline-flex;align-items:center;gap:10px;
+  }
+  .eyebrow::before{content:"";width:22px;height:1px;background:var(--rose)}
+  h1,h2,h3{font-family:'Playfair Display',serif;font-weight:500;letter-spacing:-.012em;margin:0}
+  h1{font-size:clamp(48px,7vw,96px);line-height:.98}
+  h2{font-size:clamp(36px,4.4vw,60px);line-height:1.05}
+  h3{font-size:24px;line-height:1.25}
+  em{font-style:italic;color:var(--rose-deep)}
+  .lede{font-size:18px;line-height:1.7;color:var(--mocha-soft);max-width:54ch}
 
-  <!-- Open Graph -->
-  <meta property="og:title" content="OG Nails — Nageldesign in Simbach am Inn">
-  <meta property="og:description" content="Nageldesign, das man sieht — und das hält. Hochwertige Designs & saubere Arbeit bei OG Nails.">
-  <meta property="og:type" content="website">
-  <meta property="og:url" content="https://ognail-simbach.de">
-  <meta property="og:locale" content="de_DE">
-  <meta property="og:image" content="https://ognail-simbach.de/images/gallery/gallery-09.jpg">
-  <meta property="og:image:width" content="1080">
-  <meta property="og:image:height" content="1080">
-  <meta property="og:image:alt" content="Nageldesign von OG Nails Simbach am Inn">
+  /* =============== LAYOUT =============== */
+  .wrap{max-width:1240px;margin:0 auto;padding:0 32px}
+  section{padding:120px 0;position:relative}
+  .section-tan{background:var(--cream-2)}
+  .section-mocha{background:var(--mocha);color:var(--cream)}
+  .section-head{display:flex;flex-direction:column;align-items:center;text-align:center;gap:18px;margin-bottom:64px}
+  .section-head .eyebrow{color:var(--rose-deep)}
+  .section-head h2 em{display:block}
 
-  <!-- Fonts: preconnect + preload CSS, then render-blocking stylesheet -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" as="style">
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;0,700;1,400&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  /* =============== HEADER =============== */
+  header.site{
+    position:fixed;inset:0 0 auto 0;height:var(--header-h);z-index:50;
+    backdrop-filter:saturate(1.2) blur(14px);
+    -webkit-backdrop-filter:saturate(1.2) blur(14px);
+    background:rgba(250,247,244,.72);
+    border-bottom:1px solid var(--line);
+    transition:background .3s ease, border-color .3s ease;
+  }
+  header.site .bar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:14px;color:var(--mocha)}
+  .brand .mark{width:42px;height:42px;flex:none}
+  .brand .word{display:flex;flex-direction:column;line-height:1}
+  .brand .word .name{font-family:'Playfair Display';font-weight:500;font-size:22px}
+  .brand .word .name em{font-style:italic;color:var(--rose-deep);font-weight:400}
+  .brand .word .loc{font-size:9.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--mocha-soft);margin-top:3px;font-weight:600}
+  nav.primary{display:flex;align-items:center;gap:34px}
+  nav.primary a{
+    font-size:14px;color:var(--mocha);position:relative;padding:6px 0;
+    transition:color .2s;font-weight:500;
+  }
+  nav.primary a::after{
+    content:"";position:absolute;left:50%;bottom:0;width:0;height:1px;background:var(--rose-deep);
+    transition:width .3s ease, left .3s ease;
+  }
+  nav.primary a:hover, nav.primary a.active{color:var(--rose-deep)}
+  nav.primary a.active::after, nav.primary a:hover::after{width:100%;left:0}
+  .btn{
+    display:inline-flex;align-items:center;gap:10px;
+    padding:13px 22px;border-radius:999px;font-size:13px;font-weight:600;letter-spacing:.06em;
+    transition:transform .2s, box-shadow .25s, background .2s, color .2s, border-color .2s;
+  }
+  .btn-primary{background:var(--mocha);color:var(--cream)}
+  .btn-primary:hover{background:#2d231b;transform:translateY(-1px);box-shadow:0 10px 24px -12px #3d302766}
+  .btn-rose{background:var(--rose);color:#fff}
+  .btn-rose:hover{background:var(--rose-deep);transform:translateY(-1px);box-shadow:0 10px 24px -12px #b48d6e88}
+  .btn-ghost{background:transparent;color:var(--mocha);border:1px solid var(--line-strong)}
+  .btn-ghost:hover{border-color:var(--mocha);background:#3d30270a}
+  .btn-light{background:var(--cream);color:var(--mocha)}
+  .btn-light:hover{background:#fff}
+  .btn .arr{transition:transform .25s}
+  .btn:hover .arr{transform:translateX(3px)}
+  .menu-btn{display:none;width:42px;height:42px;border-radius:50%;border:1px solid var(--line-strong);align-items:center;justify-content:center}
+  .menu-btn span{position:relative;width:18px;height:1.4px;background:var(--mocha);display:block;transition:transform .25s, opacity .25s}
+  .menu-btn span::before,.menu-btn span::after{content:"";position:absolute;left:0;width:100%;height:1.4px;background:var(--mocha);transition:transform .25s}
+  .menu-btn span::before{top:-6px}.menu-btn span::after{top:6px}
+  body.menu-open .menu-btn span{background:transparent}
+  body.menu-open .menu-btn span::before{transform:translateY(6px) rotate(45deg)}
+  body.menu-open .menu-btn span::after{transform:translateY(-6px) rotate(-45deg)}
 
-  <link rel="stylesheet" href="css/style.css?v=4">
+  .mobile-menu{
+    position:fixed;inset:var(--header-h) 0 0 0;background:var(--cream);z-index:40;
+    transform:translateY(-12px);opacity:0;pointer-events:none;transition:opacity .25s, transform .25s;
+    padding:40px 32px;display:flex;flex-direction:column;gap:8px;
+  }
+  body.menu-open .mobile-menu{opacity:1;transform:none;pointer-events:auto}
+  .mobile-menu a{font-family:'Playfair Display';font-size:32px;padding:14px 0;border-bottom:1px solid var(--line)}
+  .mobile-menu .btn{align-self:flex-start;margin-top:24px}
+
+  /* =============== HERO =============== */
+  .hero{
+    min-height:100vh;display:flex;align-items:center;
+    padding-top:calc(var(--header-h) + 40px);padding-bottom:80px;
+    position:relative;overflow:hidden;
+  }
+  .hero-bg{position:absolute;inset:0;pointer-events:none;overflow:hidden}
+  .hero-bg .glow{
+    position:absolute;border-radius:50%;filter:blur(80px);opacity:.55;
+  }
+  .hero-bg .glow.a{width:560px;height:560px;background:radial-gradient(circle,#e6d5c4 0%,transparent 70%);top:-120px;right:-80px}
+  .hero-bg .glow.b{width:480px;height:480px;background:radial-gradient(circle,#d4af3733 0%,transparent 70%);bottom:-160px;left:-100px}
+  .hero-bg .lines{
+    position:absolute;inset:0;
+    background-image:
+      linear-gradient(to right, #3d302708 1px, transparent 1px);
+    background-size: 80px 100%;
+    mask-image:linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    -webkit-mask-image:linear-gradient(to right, transparent, black 20%, black 80%, transparent);
+    opacity:.6;
+  }
+  .hero-grid{display:grid;grid-template-columns:1.15fr .85fr;gap:64px;align-items:center;position:relative;z-index:1}
+  .hero-copy h1{margin-top:18px}
+  .hero-copy h1 em{display:block}
+  .hero-sub{margin:28px 0 36px;max-width:50ch}
+  .hero-ctas{display:flex;gap:14px;flex-wrap:wrap}
+  .hero-stats{
+    margin-top:64px;display:grid;grid-template-columns:repeat(3,1fr);
+    gap:0;border-top:1px solid var(--line);padding-top:28px;max-width:540px;
+  }
+  .hero-stats .stat{display:flex;flex-direction:column;gap:4px;position:relative;padding-right:18px}
+  .hero-stats .stat + .stat{padding-left:24px;border-left:1px solid var(--line)}
+  .hero-stats .num{font-family:'Playfair Display';font-size:34px;line-height:1;color:var(--mocha)}
+  .hero-stats .num em{font-style:italic;color:var(--rose-deep)}
+  .hero-stats .lbl{font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mocha-soft);font-weight:600}
+  .hero-stats .stars{color:var(--gold);letter-spacing:2px}
+
+  /* hero visual stack: stacked nail photos */
+  .hero-visual{position:relative;aspect-ratio:4/5;width:100%}
+  .hero-visual .photo{
+    position:absolute;border-radius:6px;overflow:hidden;
+    box-shadow:0 30px 60px -30px #3d302755, 0 2px 6px -2px #3d30271a;
+    transition:transform .5s cubic-bezier(.2,.7,.2,1);
+  }
+  .hero-visual .photo img{width:100%;height:100%;object-fit:cover}
+  .hero-visual .photo.main{inset:0 18% 14% 0;z-index:2}
+  .hero-visual .photo.alt{inset:42% 0 0 36%;z-index:3;border:6px solid var(--cream)}
+  .hero-visual .photo.frame{
+    position:absolute;inset:8% -6% 22% 14%;border:1px solid var(--rose);border-radius:6px;z-index:1;
+    background:transparent;box-shadow:none;
+  }
+  .hero-visual .tag-card{
+    position:absolute;z-index:4;background:var(--cream);border:1px solid var(--line);
+    border-radius:6px;padding:14px 16px;box-shadow:0 18px 40px -22px #3d302744;
+    display:flex;align-items:center;gap:12px;
+    bottom:6%;left:-4%;
+  }
+  .hero-visual .tag-card .dot{width:8px;height:8px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #d4af3722}
+  .hero-visual .tag-card .t{display:flex;flex-direction:column;line-height:1.15}
+  .hero-visual .tag-card .t .a{font-size:11px;letter-spacing:.2em;text-transform:uppercase;color:var(--mocha-soft);font-weight:600}
+  .hero-visual .tag-card .t .b{font-family:'Playfair Display';font-style:italic;color:var(--mocha);font-size:18px}
+
+  /* scroll cue */
+  .scroll-cue{position:absolute;left:50%;bottom:28px;transform:translateX(-50%);font-size:10px;letter-spacing:.32em;text-transform:uppercase;color:var(--mocha-soft);font-weight:600;display:flex;flex-direction:column;align-items:center;gap:10px;z-index:2}
+  .scroll-cue .line{width:1px;height:36px;background:var(--mocha-soft);animation:cue 2.4s ease-in-out infinite;transform-origin:top}
+  @keyframes cue{0%,100%{transform:scaleY(.3)}50%{transform:scaleY(1)}}
+
+  /* =============== MARQUEE (signature words) =============== */
+  .marquee{padding:36px 0;border-top:1px solid var(--line);border-bottom:1px solid var(--line);background:var(--cream);overflow:hidden}
+  .marquee-track{display:flex;gap:60px;white-space:nowrap;animation:marq 38s linear infinite;font-family:'Playfair Display';font-size:30px;color:var(--mocha);font-style:italic}
+  .marquee-track span{display:inline-flex;align-items:center;gap:60px;color:var(--mocha)}
+  .marquee-track .dot{width:6px;height:6px;border-radius:50%;background:var(--rose);display:inline-block}
+  @keyframes marq{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+  /* =============== LEISTUNGEN / MENU =============== */
+  .menu-card{
+    background:var(--cream);border:1px solid var(--line);border-radius:8px;
+    padding:56px 64px;max-width:980px;margin:0 auto;
+    position:relative;
+  }
+  .menu-card::before,.menu-card::after{
+    content:"";position:absolute;width:46px;height:46px;border:1px solid var(--rose);
+  }
+  .menu-card::before{top:14px;left:14px;border-right:0;border-bottom:0}
+  .menu-card::after{bottom:14px;right:14px;border-left:0;border-top:0}
+  .menu-section{padding:30px 0;border-bottom:1px dashed var(--line-strong)}
+  .menu-section:last-of-type{border-bottom:0}
+  .menu-section-title{display:flex;align-items:baseline;gap:14px;margin-bottom:16px}
+  .menu-section-title .n{font-family:'Playfair Display';font-style:italic;color:var(--rose-deep);font-size:14px}
+  .menu-section-title h3{font-family:'Playfair Display';font-size:24px;font-weight:500}
+  .menu-row{display:flex;align-items:baseline;gap:14px;padding:10px 0;font-size:17px}
+  .menu-row .name{font-weight:500;color:var(--mocha)}
+  .menu-row .desc{color:var(--mocha-soft);font-size:14px;font-style:italic;margin-left:0}
+  .menu-row .leader{flex:1;border-bottom:1px dotted var(--line-strong);transform:translateY(-4px);margin:0 6px}
+  .menu-row .price{font-family:'Playfair Display';font-size:22px;color:var(--mocha);min-width:80px;text-align:right;font-weight:500}
+  .menu-row .price em{font-style:italic;color:var(--rose-deep);font-size:14px;margin-right:6px}
+  .menu-extras{margin-top:24px;display:flex;flex-wrap:wrap;gap:18px;font-size:13px;color:var(--mocha-soft);justify-content:center}
+  .menu-extras .pill{padding:8px 16px;border:1px solid var(--line-strong);border-radius:999px;display:inline-flex;align-items:center;gap:10px}
+  .menu-extras .pill em{color:var(--rose-deep);font-style:normal;font-weight:600}
+
+  /* =============== ABOUT =============== */
+  .about-grid{display:grid;grid-template-columns:.85fr 1fr;gap:80px;align-items:center}
+  .about-work{position:relative;aspect-ratio:4/5;width:100%}
+  .about-work .aw-photo{position:absolute;border-radius:6px;overflow:hidden;box-shadow:0 28px 60px -32px #3d302755, 0 2px 6px -2px #3d30271a}
+  .about-work .aw-photo img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .about-work .aw-photo:hover img{transform:scale(1.04)}
+  .about-work .aw-a{inset:0 22% 38% 0;z-index:2}
+  .about-work .aw-b{inset:30% 0 14% 38%;z-index:3;border:6px solid var(--cream)}
+  .about-work .aw-c{inset:70% 36% 0 6%;z-index:4;border:6px solid var(--cream)}
+  .about-work .aw-tag{position:absolute;left:0;bottom:-10px;background:var(--cream);border:1px solid var(--line);border-radius:999px;padding:8px 16px;font-size:11px;letter-spacing:.22em;text-transform:uppercase;color:var(--mocha-soft);font-weight:600;display:inline-flex;align-items:center;gap:10px;z-index:5;box-shadow:0 14px 30px -20px #3d302744}
+  .about-work .aw-tag i{width:6px;height:6px;border-radius:50%;background:var(--gold);box-shadow:0 0 0 4px #d4af3722}
+  .about-text h2{margin-bottom:22px}
+  .about-text p{margin:0 0 18px;max-width:54ch}
+  .usps{margin-top:36px;display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+  .usp{padding:22px;border:1px solid var(--line);border-radius:6px;background:var(--cream)}
+  .usp .ico{width:36px;height:36px;color:var(--rose-deep);margin-bottom:14px}
+  .usp h4{font-family:'Playfair Display';font-weight:500;font-size:17px;margin:0 0 6px}
+  .usp p{font-size:13px;color:var(--mocha-soft);margin:0;line-height:1.55}
+
+  /* =============== GALLERY =============== */
+  .gallery{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:90px;gap:10px}
+  .gallery .g{overflow:hidden;border-radius:4px;position:relative;background:#eee}
+  .gallery .g img{width:100%;height:100%;object-fit:cover;transition:transform .8s cubic-bezier(.2,.7,.2,1)}
+  .gallery .g:hover img{transform:scale(1.06)}
+  .gallery .g::after{content:"";position:absolute;inset:0;background:linear-gradient(180deg,transparent 60%,#3d302722);opacity:0;transition:opacity .3s}
+  .gallery .g:hover::after{opacity:1}
+  .gallery .g1{grid-column:span 5;grid-row:span 4}
+  .gallery .g2{grid-column:span 3;grid-row:span 4}
+  .gallery .g3{grid-column:span 4;grid-row:span 4}
+  .gallery .g4{grid-column:span 3;grid-row:span 3}
+  .gallery .g5{grid-column:span 5;grid-row:span 3}
+  .gallery .g6{grid-column:span 4;grid-row:span 3}
+
+  /* =============== REVIEWS =============== */
+  .review-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:24px}
+  .review{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:34px 30px;display:flex;flex-direction:column;gap:18px;transition:transform .3s, box-shadow .3s}
+  .review:hover{transform:translateY(-4px);box-shadow:0 24px 50px -30px #3d302744}
+  .review .stars{color:var(--gold);letter-spacing:3px;font-size:14px}
+  .review .quote{font-family:'Playfair Display';font-style:italic;font-size:20px;line-height:1.5;color:var(--mocha);margin:0}
+  .review .quote::before{content:"\201C";font-size:46px;line-height:0;vertical-align:-18px;color:var(--rose);margin-right:4px}
+  .review .person{margin-top:auto;display:flex;align-items:center;gap:14px;padding-top:18px;border-top:1px solid var(--line)}
+  .review .avatar{width:42px;height:42px;border-radius:50%;background:linear-gradient(135deg,#e6d5c4,#c9a88c);display:flex;align-items:center;justify-content:center;color:#fff;font-family:'Playfair Display';font-weight:600;font-size:18px;flex:none}
+  .review .who{display:flex;flex-direction:column;line-height:1.2}
+  .review .who .n{font-weight:600;font-size:14px}
+  .review .who .h{font-size:11px;color:var(--mocha-soft);letter-spacing:.12em}
+
+  /* =============== CONTACT =============== */
+  .contact-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:64px;align-items:start}
+  .info-list{display:flex;flex-direction:column;gap:24px;margin-top:34px}
+  .info{display:flex;gap:18px;align-items:flex-start}
+  .info .ico{width:42px;height:42px;border-radius:50%;background:var(--cream);display:flex;align-items:center;justify-content:center;color:var(--rose-deep);flex:none;border:1px solid var(--line)}
+  .info .ico svg{width:18px;height:18px}
+  .info .t .lbl{font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mocha-soft);margin-bottom:4px;font-weight:600}
+  .info .t .v{font-size:16px;color:var(--mocha);font-weight:500}
+  .info .t .v a:hover{color:var(--rose-deep)}
+  .hours{margin-top:36px;border-top:1px solid var(--line);padding-top:24px}
+  .hours .row{display:flex;justify-content:space-between;padding:6px 0;font-size:14px;color:var(--mocha)}
+  .hours .row.closed{color:var(--mocha-soft)}
+
+  form.booking{background:var(--cream);border:1px solid var(--line);border-radius:8px;padding:40px}
+  form.booking .row{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+  form.booking label{display:flex;flex-direction:column;gap:8px;margin-bottom:18px;font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mocha-soft);font-weight:600}
+  form.booking input, form.booking select, form.booking textarea{
+    font:inherit;font-size:15px;color:var(--mocha);
+    background:transparent;border:0;border-bottom:1px solid var(--line-strong);
+    padding:10px 0 12px;outline:none;transition:border-color .2s;letter-spacing:0;text-transform:none;font-weight:400;
+  }
+  form.booking input:focus, form.booking select:focus, form.booking textarea:focus{border-bottom-color:var(--rose-deep)}
+  form.booking input.invalid{border-bottom-color:#b91d1d}
+  form.booking textarea{min-height:88px;resize:vertical}
+  form.booking .submit{margin-top:14px;display:flex;gap:12px;align-items:center;flex-wrap:wrap}
+  form.booking .note{font-size:12px;color:var(--mocha-soft);margin-top:14px;letter-spacing:.02em}
+
+  /* =============== MAP =============== */
+  .map{height:380px;width:100%;overflow:hidden;border-top:1px solid var(--line);border-bottom:1px solid var(--line);position:relative;background:var(--cream-2)}
+  .map iframe{width:100%;height:100%;border:0;filter:saturate(.55) contrast(.95) sepia(.15) brightness(1.02)}
+  .map .pin{
+    position:absolute;left:50%;top:50%;transform:translate(-50%,-100%);
+    background:var(--mocha);color:var(--cream);padding:10px 16px;border-radius:999px;
+    font-size:12px;font-weight:600;letter-spacing:.1em;display:flex;align-items:center;gap:8px;
+    box-shadow:0 14px 30px -16px #3d3027cc;pointer-events:none;
+  }
+  .map .pin::after{content:"";position:absolute;left:50%;bottom:-6px;transform:translateX(-50%) rotate(45deg);width:12px;height:12px;background:var(--mocha)}
+
+  /* =============== FOOTER =============== */
+  footer.site{background:var(--mocha);color:var(--cream);padding:80px 0 32px}
+  footer.site .top{display:grid;grid-template-columns:1.3fr 1fr 1fr 1fr;gap:48px;padding-bottom:48px;border-bottom:1px solid #cdbfb226}
+  footer.site .brand{color:var(--cream)}
+  footer.site .brand .word .name em{color:var(--rose)}
+  footer.site .brand .word .loc{color:#cdbfb2}
+  footer.site h5{font-family:'Playfair Display';font-weight:500;font-size:16px;margin:0 0 18px;color:var(--cream)}
+  footer.site ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+  footer.site ul a{font-size:14px;color:#cdbfb2;transition:color .2s}
+  footer.site ul a:hover{color:var(--rose)}
+  footer.site .social{display:flex;gap:12px;margin-top:14px}
+  footer.site .social a{width:38px;height:38px;border-radius:50%;border:1px solid #cdbfb244;display:flex;align-items:center;justify-content:center;color:#cdbfb2;transition:all .25s}
+  footer.site .social a:hover{background:var(--rose);color:#fff;border-color:transparent}
+  footer.site .bottom{padding-top:24px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;color:#cdbfb2}
+  footer.site .bottom .legal{display:flex;gap:18px}
+
+  /* =============== WHATSAPP FAB =============== */
+  .fab{
+    position:fixed;right:22px;bottom:22px;z-index:60;
+    width:60px;height:60px;border-radius:50%;
+    background:#25D366;color:#fff;display:flex;align-items:center;justify-content:center;
+    box-shadow:0 14px 32px -10px #25D36688, 0 4px 10px -2px #00000022;
+    transition:transform .25s;
+  }
+  .fab:hover{transform:scale(1.06)}
+  .fab::before{
+    content:"";position:absolute;inset:-6px;border-radius:50%;background:#25D36644;
+    animation:pulse 2.2s ease-out infinite;z-index:-1;
+  }
+  @keyframes pulse{0%{transform:scale(.85);opacity:.7}100%{transform:scale(1.5);opacity:0}}
+
+  /* =============== ANIMATIONS =============== */
+  .reveal{opacity:0;transform:translateY(24px);transition:opacity .9s cubic-bezier(.2,.7,.2,1), transform .9s cubic-bezier(.2,.7,.2,1)}
+  .reveal.in{opacity:1;transform:none}
+  .reveal.d2{transition-delay:.1s} .reveal.d3{transition-delay:.2s} .reveal.d4{transition-delay:.3s} .reveal.d5{transition-delay:.4s}
+
+  /* =============== RESPONSIVE =============== */
+  @media (max-width: 1024px){
+    .hero-grid{grid-template-columns:1fr;gap:48px}
+    .hero-visual{max-width:520px;margin:0 auto}
+    .about-grid{grid-template-columns:1fr;gap:48px}
+    .about-work{max-width:480px;margin:0 auto}
+    .contact-grid{grid-template-columns:1fr;gap:40px}
+    .review-grid{grid-template-columns:1fr 1fr}
+    footer.site .top{grid-template-columns:1.4fr 1fr 1fr}
+    footer.site .col-legal{display:none}
+  }
+  @media (max-width: 768px){
+    section{padding:80px 0}
+    .wrap{padding:0 22px}
+    .menu-card{padding:32px 24px}
+    .menu-row{flex-wrap:wrap;gap:6px}
+    .menu-row .leader{display:none}
+    .menu-row .price{margin-left:auto}
+    nav.primary, .hero-ctas .desktop-only{display:none}
+    .menu-btn{display:flex}
+    .hero-ctas{flex-direction:column;align-items:stretch}
+    .hero-stats{grid-template-columns:1fr;gap:0;max-width:none}
+    .hero-stats .stat + .stat{padding-left:0;border-left:0;border-top:1px solid var(--line);padding-top:14px;margin-top:14px}
+    .gallery{grid-template-columns:repeat(6,1fr)}
+    .gallery .g1{grid-column:span 6;grid-row:span 4}
+    .gallery .g2,.gallery .g3,.gallery .g4,.gallery .g5,.gallery .g6{grid-column:span 3;grid-row:span 3}
+    .review-grid{grid-template-columns:1fr}
+    .usps{grid-template-columns:1fr}
+    form.booking .row{grid-template-columns:1fr}
+    footer.site .top{grid-template-columns:1fr 1fr;gap:32px}
+    .hero-visual .tag-card{bottom:auto;top:-22px;left:auto;right:-6px}
+  }
+</style>
 </head>
 <body>
 
-  <!-- ========== NAVIGATION ========== -->
-  <header class="header" id="header">
-    <nav class="nav container">
-      <a href="#" class="nav__logo">
-        <span class="nav__logo-text">OG <span class="nav__logo-accent">Nails</span></span>
-      </a>
+<!-- inline SVG defs -->
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="og-mark" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="0.6" opacity=".3"/>
+      <ellipse cx="78" cy="100" rx="48" ry="58" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <ellipse cx="78" cy="100" rx="42" ry="52" fill="none" stroke="currentColor" stroke-width="0.6" opacity=".4"/>
+      <path d="M 175 70 A 48 58 0 1 0 175 130 L 175 100 L 140 100" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/>
+      <line x1="140" y1="96" x2="140" y2="104" stroke="currentColor" stroke-width="3.2"/>
+      <path d="M 122 100 l 4 -4 l 4 4 l -4 4 z" fill="currentColor" opacity=".75"/>
+    </symbol>
+  </defs>
+</svg>
 
-      <button class="nav__toggle" id="nav-toggle" aria-label="Menü öffnen">
-        <span></span>
-        <span></span>
-        <span></span>
-      </button>
-
-      <ul class="nav__menu" id="nav-menu">
-        <li><a href="#leistungen" class="nav__link">Leistungen</a></li>
-        <li><a href="#ueber-mich" class="nav__link">Über mich</a></li>
-        <li><a href="#meine-arbeiten" class="nav__link">Arbeiten</a></li>
-        <li><a href="#bewertungen" class="nav__link">Bewertungen</a></li>
-        <li><a href="#kontakt" class="nav__link">Kontakt</a></li>
-        <li>
-          <a href="https://wa.me/4915238931238" class="nav__cta" target="_blank" rel="noopener">
-            Termin buchen
-          </a>
-        </li>
-      </ul>
-    </nav>
-  </header>
-
-  <!-- ========== HERO ========== -->
-  <section class="hero" id="hero">
-    <div class="hero__bg"></div>
-    <div class="container hero__content">
-      <p class="hero__subtitle animate-fade-in">Willkommen bei OG Nails</p>
-      <h1 class="hero__title animate-fade-in">Nageldesign · Hochwertige<br>Designs & saubere Arbeit</h1>
-      <p class="hero__description animate-fade-in">
-        Nageldesign, das man sieht — und das hält. Bei OG Nails in Simbach am Inn
-        bekommst du mehr als schöne Nägel: du bekommst ein entspanntes Erlebnis,
-        persönliche Beratung und ein Ergebnis, über das Kunden sagen: „Sooo schön, danke!"
-      </p>
-      <div class="hero__buttons animate-fade-in">
-        <a href="https://wa.me/4915238931238" class="btn btn--primary" target="_blank" rel="noopener">
-          Termin buchen
-        </a>
-        <a href="#leistungen" class="btn btn--outline">
-          Leistungen ansehen
-        </a>
-      </div>
-      <div class="hero__stats animate-fade-in">
-        <div class="hero__stat">
-          <span class="hero__stat-number">5+</span>
-          <span class="hero__stat-label">Jahre Erfahrung</span>
-        </div>
-        <div class="hero__stat">
-          <span class="hero__stat-number">150+</span>
-          <span class="hero__stat-label">Zufriedene Kunden</span>
-        </div>
-        <div class="hero__stat">
-          <span class="hero__stat-number">5.0</span>
-          <span class="hero__stat-label">⭐ Bewertung</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== LEISTUNGEN ========== -->
-  <section class="services section" id="leistungen">
-    <div class="container">
-      <p class="section__subtitle animate-fade-in">Was ich anbiete</p>
-      <h2 class="section__title animate-fade-in">Leistungen & Preise</h2>
-
-      <div class="services__list animate-fade-in">
-        <!-- Maniküre -->
-        <div class="service-group">
-          <h3 class="service-group__title">Maniküre</h3>
-          <div class="service-item service-item--sub">
-            <span class="service-item__bullet">•</span>
-            <span class="service-item__name">Komplette Maniküre</span>
-            <span class="service-item__dots"></span>
-            <span class="service-item__price">30,00 €</span>
-          </div>
-        </div>
-
-        <!-- Maniküre + Gelverstärkung -->
-        <div class="service-group">
-          <h3 class="service-group__title">Maniküre + Gelverstärkung</h3>
-          <div class="service-item service-item--sub">
-            <span class="service-item__bullet">•</span>
-            <span class="service-item__name">Kurze bis mittellange Nägel</span>
-            <span class="service-item__dots"></span>
-            <span class="service-item__price">55,00 €</span>
-          </div>
-          <div class="service-item service-item--sub">
-            <span class="service-item__bullet">•</span>
-            <span class="service-item__name">Längere Nägel</span>
-            <span class="service-item__dots"></span>
-            <span class="service-item__price">60,00 €</span>
-          </div>
-        </div>
-
-        <!-- Maniküre + Gelverstärkung + Farbe/einfaches Design -->
-        <div class="service-group">
-          <h3 class="service-group__title">Maniküre + Gelverstärkung <span class="service-group__extra">+ Farbe / einfaches Design</span></h3>
-          <div class="service-item service-item--sub">
-            <span class="service-item__bullet">•</span>
-            <span class="service-item__name">Kurze bis mittellange Nägel</span>
-            <span class="service-item__dots"></span>
-            <span class="service-item__price">60,00 €</span>
-          </div>
-          <div class="service-item service-item--sub">
-            <span class="service-item__bullet">•</span>
-            <span class="service-item__name">Längere Nägel</span>
-            <span class="service-item__dots"></span>
-            <span class="service-item__price">65,00 €</span>
-          </div>
-        </div>
-
-        <!-- Maniküre + Gelverstärkung + aufwändiges Design -->
-        <div class="service-group">
-          <h3 class="service-group__title">Maniküre + Gelverstärkung <span class="service-group__extra">+ aufwändiges Design</span></h3>
-          <div class="service-item service-item--sub">
-            <span class="service-item__bullet">•</span>
-            <span class="service-item__name">Kurze bis mittellange Nägel</span>
-            <span class="service-item__dots"></span>
-            <span class="service-item__price">65,00 €</span>
-          </div>
-          <div class="service-item service-item--sub">
-            <span class="service-item__bullet">•</span>
-            <span class="service-item__name">Längere Nägel</span>
-            <span class="service-item__dots"></span>
-            <span class="service-item__price">70,00 €</span>
-          </div>
-        </div>
-
-        <!-- Nagelverlängerung -->
-        <div class="service-group">
-          <h3 class="service-group__title">Nagelverlängerung</h3>
-          <div class="service-item service-item--sub">
-            <span class="service-item__bullet">•</span>
-            <span class="service-item__name">Aufpreis zur gewählten Leistung</span>
-            <span class="service-item__dots"></span>
-            <span class="service-item__price">+10,00 €</span>
-          </div>
-        </div>
-
-        <!-- Nagelreparatur -->
-        <div class="service-group">
-          <h3 class="service-group__title">Nagelreparatur</h3>
-          <div class="service-item service-item--sub">
-            <span class="service-item__bullet">•</span>
-            <span class="service-item__name">Außerhalb der Garantiezeit (pro Nagel)</span>
-            <span class="service-item__dots"></span>
-            <span class="service-item__price">5,00 €</span>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== ÜBER MICH ========== -->
-  <section class="about section" id="ueber-mich">
-    <div class="container about__container">
-      <div class="about__content animate-fade-in">
-        <p class="section__subtitle">Über mich</p>
-        <h2 class="section__title section__title--left">Olga Görzen</h2>
-        <p class="about__text">
-          Hallo, ich bin Olga — die Inhaberin von OG Nails in Simbach am Inn.
-          Seit über 5 Jahren ist Nageldesign meine Leidenschaft. Mir ist wichtig,
-          dass du dich bei mir wohlfühlst und mit einem Ergebnis nach Hause gehst,
-          das dich jeden Tag aufs Neue freut. Ob schlicht, elegant oder kreativ —
-          ich berate dich persönlich und finde genau das richtige Design für dich.
-        </p>
-
-        <div class="about__usps">
-          <div class="about__usp">
-            <span class="about__usp-icon">💅</span>
-            <div>
-              <strong>5+ Jahre Erfahrung</strong>
-              <p>Handwerk das man sieht — und das wochenlang hält</p>
-            </div>
-          </div>
-          <div class="about__usp">
-            <span class="about__usp-icon">🎨</span>
-            <div>
-              <strong>Individuelles Design</strong>
-              <p>Von schlicht-elegant bis kreativ verspielt — alles möglich</p>
-            </div>
-          </div>
-          <div class="about__usp">
-            <span class="about__usp-icon">✅</span>
-            <div>
-              <strong>Hochwertige Materialien</strong>
-              <p>Nur geprüfte, sichere Produkte für Nägel die in Form bleiben</p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== GALERIE ========== -->
-  <section class="gallery section" id="meine-arbeiten">
-    <div class="container">
-      <p class="section__subtitle animate-fade-in">Frische Ergebnisse</p>
-      <h2 class="section__title animate-fade-in">Meine Arbeiten</h2>
-
-      <div class="gallery__grid">
-
-        <a href="#lb-01" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-01.jpg" alt="Rosé Gelnägel mit Stern- und Monddetails, Gelverstärkung" loading="lazy">
-        </a>
-        <a href="#lb-02" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-02.jpg" alt="Rote French Tips mit Goldakzenten auf langen Mandelform-Nägeln" loading="lazy">
-        </a>
-        <a href="#lb-03" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-03.jpg" alt="Klassische weiße French Manicure auf langen ovalen Nägeln" loading="lazy">
-        </a>
-        <a href="#lb-04" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-04.jpg" alt="Rosa Gelnägel mit Silber-Leopardenmuster-Akzentnageldesign" loading="lazy">
-        </a>
-        <a href="#lb-05" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-05.jpg" alt="Nude Gelnägel mit schwarzem Leopardenmuster als French Tips" loading="lazy">
-        </a>
-        <a href="#lb-06" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-06.jpg" alt="Hellrosa Babygirl-Nägel mit zarten Blüten- und Schmetterlingsstempeln" loading="lazy">
-        </a>
-        <a href="#lb-07" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-07.jpg" alt="Kurze natürliche Nägel mit Nude-Gel und glänzendem Finish" loading="lazy">
-        </a>
-        <a href="#lb-08" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-08.jpg" alt="Dunkelrote Gelnägel in Mandelform mit matt-glänzendem Kombifinish" loading="lazy">
-        </a>
-        <a href="#lb-09" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-09.jpg" alt="Weiße Gelnägel mit silbernen Glitzerlinien auf eckiger Form" loading="lazy">
-        </a>
-        <a href="#lb-10" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-10.jpg" alt="Hellbeige Nägel mit zarten handgemalten Blütendetails" loading="lazy">
-        </a>
-        <a href="#lb-11" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-11.jpg" alt="Milchig-weiße Gelnägel mit goldenen Folienakzenten" loading="lazy">
-        </a>
-        <a href="#lb-12" class="gallery__item animate-fade-in">
-          <img src="images/gallery/gallery-12.jpg" alt="Pastelllila Gelnägel mit Farbverlauf und Glitzerdetails" loading="lazy">
-        </a>
-
-      </div>
-
-      <div class="gallery__cta animate-fade-in">
-        <a href="https://instagram.com/ognails.simbach" class="btn btn--outline" target="_blank" rel="noopener">
-          Mehr auf Instagram ansehen
-        </a>
-      </div>
-    </div>
-  </section>
-
-  <!-- CSS-Lightbox Overlays (kein JavaScript) -->
-  <div class="lightbox" id="lb-01" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-01.jpg" alt="Rosé Gelnägel mit Stern- und Monddetails, Gelverstärkung">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-02" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-02.jpg" alt="Rote French Tips mit Goldakzenten auf langen Mandelform-Nägeln">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-03" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-03.jpg" alt="Klassische weiße French Manicure auf langen ovalen Nägeln">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-04" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-04.jpg" alt="Rosa Gelnägel mit Silber-Leopardenmuster-Akzentnageldesign">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-05" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-05.jpg" alt="Nude Gelnägel mit schwarzem Leopardenmuster als French Tips">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-06" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-06.jpg" alt="Hellrosa Babygirl-Nägel mit zarten Blüten- und Schmetterlingsstempeln">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-07" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-07.jpg" alt="Kurze natürliche Nägel mit Nude-Gel und glänzendem Finish">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-08" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-08.jpg" alt="Dunkelrote Gelnägel in Mandelform mit matt-glänzendem Kombifinish">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-09" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-09.jpg" alt="Weiße Gelnägel mit silbernen Glitzerlinien auf eckiger Form">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-10" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-10.jpg" alt="Hellbeige Nägel mit zarten handgemalten Blütendetails">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-11" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-11.jpg" alt="Milchig-weiße Gelnägel mit goldenen Folienakzenten">
-    </div>
-  </div>
-  <div class="lightbox" id="lb-12" role="dialog" aria-modal="true">
-    <a href="#meine-arbeiten" class="lightbox__close" aria-label="Schließen">&times;</a>
-    <a href="#meine-arbeiten" class="lightbox__backdrop"></a>
-    <div class="lightbox__content">
-      <img src="images/gallery/gallery-12.jpg" alt="Pastelllila Gelnägel mit Farbverlauf und Glitzerdetails">
-    </div>
-  </div>
-
-  <!-- ========== BEWERTUNGEN ========== -->
-  <section class="reviews section" id="bewertungen">
-    <div class="container">
-      <p class="section__subtitle animate-fade-in">Das sagen meine Kunden</p>
-      <h2 class="section__title animate-fade-in">Bewertungen</h2>
-
-      <div class="reviews__grid">
-        <div class="review-card animate-fade-in">
-          <div class="review-card__stars">⭐⭐⭐⭐⭐</div>
-          <p class="review-card__text">„Sooo schön danke 🥰"</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">S</div>
-            <div>
-              <strong>sylviai.1</strong>
-              <span>via Instagram</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card animate-fade-in">
-          <div class="review-card__stars">⭐⭐⭐⭐⭐</div>
-          <p class="review-card__text">„Danke dir liebe Olga 🙌"</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">A</div>
-            <div>
-              <strong>alexee_92</strong>
-              <span>via Instagram</span>
-            </div>
-          </div>
-        </div>
-
-        <div class="review-card animate-fade-in">
-          <div class="review-card__stars">⭐⭐⭐⭐⭐</div>
-          <p class="review-card__text">„Professionell, herzlich und das Ergebnis ist immer perfekt. Sehr empfehlenswert!"</p>
-          <div class="review-card__author">
-            <div class="review-card__avatar">L</div>
-            <div>
-              <strong>Laura M.</strong>
-              <span>Stammkundin</span>
-            </div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== KONTAKT ========== -->
-  <section class="contact section" id="kontakt">
-    <div class="container contact__container">
-      <div class="contact__info animate-fade-in">
-        <p class="section__subtitle">Kontakt</p>
-        <h2 class="section__title section__title--left">Termin vereinbaren</h2>
-        <p class="contact__text">
-          Termine einfach per DM, WhatsApp oder Telefon. Ich freue mich auf dich!
-        </p>
-
-        <div class="contact__details">
-          <div class="contact__detail">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
-              <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
-              <circle cx="12" cy="10" r="3"/>
-            </svg>
-            <div>
-              <strong>Adresse</strong>
-              <p>Münchner Str. 81, 84359 Simbach am Inn</p>
-              <small>Kostenlose Parkplätze vor der Tür</small>
-            </div>
-          </div>
-
-          <div class="contact__detail">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
-              <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.361 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/>
-            </svg>
-            <div>
-              <strong>Telefon</strong>
-              <a href="tel:+4915238931238">+49 1523 8931238</a>
-            </div>
-          </div>
-
-          <div class="contact__detail">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
-              <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
-              <polyline points="22,6 12,13 2,6"/>
-            </svg>
-            <div>
-              <strong>E-Mail</strong>
-              <a href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a>
-            </div>
-          </div>
-
-          <div class="contact__detail">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="20" height="20">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="5"/>
-              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
-            </svg>
-            <div>
-              <strong>Instagram</strong>
-              <a href="https://instagram.com/ognails.simbach" target="_blank" rel="noopener">@ognails.simbach</a>
-            </div>
-          </div>
-        </div>
-
-        <div class="contact__hours">
-          <h3>Öffnungszeiten</h3>
-          <table class="contact__hours-table">
-            <tr><td>Montag</td><td>09:00 – 16:00 Uhr</td></tr>
-            <tr><td>Dienstag</td><td>09:00 – 16:00 Uhr</td></tr>
-            <tr><td>Mittwoch</td><td>09:00 – 16:00 Uhr</td></tr>
-            <tr><td>Donnerstag</td><td>09:00 – 16:00 Uhr</td></tr>
-            <tr><td>Freitag</td><td>09:00 – 16:00 Uhr</td></tr>
-            <tr class="contact__hours-closed"><td>Samstag</td><td>Geschlossen</td></tr>
-            <tr class="contact__hours-closed"><td>Sonntag</td><td>Geschlossen</td></tr>
-          </table>
-        </div>
-      </div>
-
-      <div class="contact__form-wrapper animate-fade-in">
-        <h3 class="contact__form-title">Terminanfrage</h3>
-        <form class="contact__form" id="contact-form"
-              action="https://formspree.io/f/mvzvlqrr"
-              method="POST">
-          <!-- Formspree hidden fields -->
-          <input type="hidden" name="_subject" value="Neue Terminanfrage — OG Nails">
-          <input type="hidden" name="_next" value="https://ognail-simbach.de/danke.html">
-          <!-- Honeypot anti-spam -->
-          <input type="text" name="_gotcha" style="display:none" tabindex="-1" autocomplete="off">
-          <div class="form-group">
-            <label for="name">Name *</label>
-            <input type="text" id="name" name="name" required placeholder="Dein Name">
-          </div>
-          <div class="form-group">
-            <label for="phone">Telefon *</label>
-            <input type="tel" id="phone" name="phone" required placeholder="+49 ...">
-          </div>
-          <div class="form-group">
-            <label for="email">E-Mail</label>
-            <input type="email" id="email" name="email" placeholder="deine@email.de">
-          </div>
-          <div class="form-group">
-            <label for="service">Gewünschte Leistung *</label>
-            <select id="service" name="service" required>
-              <option value="" disabled selected>Bitte wählen...</option>
-              <option value="manikuere">Maniküre — 30 €</option>
-              <option value="gel-kurz">Maniküre + Gel kurz/mittel — 55 €</option>
-              <option value="gel-lang">Maniküre + Gel lang — 60 €</option>
-              <option value="gel-kurz-farbe">Gel kurz/mittel + Farbe — 60 €</option>
-              <option value="gel-lang-farbe">Gel lang + Farbe — 65 €</option>
-              <option value="gel-kurz-design">Gel kurz/mittel + Design — 65 €</option>
-              <option value="gel-lang-design">Gel lang + Design — 70 €</option>
-              <option value="verlaengerung">Nagelverlängerung — +10 €</option>
-              <option value="reparatur">Nagelreparatur — 5 €</option>
-            </select>
-          </div>
-          <div class="form-group">
-            <label for="date">Wunschtermin</label>
-            <input type="datetime-local" id="date" name="date">
-          </div>
-          <div class="form-group">
-            <label for="message">Nachricht (optional)</label>
-            <textarea id="message" name="message" rows="3" placeholder="Besondere Wünsche..."></textarea>
-          </div>
-          <button type="submit" class="btn btn--primary btn--full">Anfrage senden</button>
-          <div class="form-success" id="form-success">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" width="24" height="24">
-              <path d="M22 11.08V12a10 10 0 1 1-5.93-9.14"/>
-              <polyline points="22 4 12 14.01 9 11.01"/>
-            </svg>
-            <p><strong>Anfrage gesendet!</strong><br>Ich melde mich schnellstmöglich bei dir.</p>
-          </div>
-        </form>
-      </div>
-    </div>
-  </section>
-
-  <!-- ========== GOOGLE MAPS ========== -->
-  <section class="map-section" id="anfahrt">
-    <iframe
-      class="map-section__iframe"
-      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2673.1!2d13.026!3d48.263!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x4775e0a5c5d0f0f1%3A0x0!2sM%C3%BCnchner+Str.+81%2C+84359+Simbach+am+Inn!5e0!3m2!1sde!2sde!4v1700000000000!5m2!1sde!2sde"
-      width="100%"
-      height="400"
-      style="border:0;"
-      allowfullscreen=""
-      loading="lazy"
-      referrerpolicy="no-referrer-when-downgrade"
-      title="OG Nails Standort — Münchner Str. 81, 84359 Simbach am Inn">
-    </iframe>
-  </section>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="container footer__container">
-      <div class="footer__brand">
-        <span class="footer__logo">OG <span class="footer__logo-accent">Nails</span></span>
-        <p class="footer__tagline">Nageldesign · Hochwertige Designs & saubere Arbeit</p>
-      </div>
-
-      <div class="footer__links">
-        <h4>Navigation</h4>
-        <a href="#leistungen">Leistungen</a>
-        <a href="#ueber-mich">Über mich</a>
-        <a href="#meine-arbeiten">Arbeiten</a>
-        <a href="#bewertungen">Bewertungen</a>
-        <a href="#kontakt">Kontakt</a>
-      </div>
-
-      <div class="footer__social">
-        <h4>Social Media</h4>
-        <div class="footer__social-links">
-          <a href="https://instagram.com/ognails.simbach" target="_blank" rel="noopener" aria-label="Instagram">
-            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" width="24" height="24">
-              <rect x="2" y="2" width="20" height="20" rx="5"/>
-              <circle cx="12" cy="12" r="5"/>
-              <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor"/>
-            </svg>
-          </a>
-          <a href="https://wa.me/4915238931238" target="_blank" rel="noopener" aria-label="WhatsApp">
-            <svg viewBox="0 0 24 24" fill="currentColor" width="24" height="24">
-              <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-            </svg>
-          </a>
-        </div>
-      </div>
-    </div>
-
-    <div class="footer__bottom">
-      <div class="container">
-        <p>&copy; 2026 OG Nails — Olga Görzen. Alle Rechte vorbehalten. &nbsp;|&nbsp;
-          <a href="impressum.html" class="footer__legal-link">Impressum</a>
-          &nbsp;|&nbsp;
-          <a href="datenschutz.html" class="footer__legal-link">Datenschutz</a>
-        </p>
-      </div>
-    </div>
-  </footer>
-
-  <!-- Sticky Mobile CTA -->
-  <div class="cta-bar" id="cta-bar" aria-hidden="true">
-    <a href="https://wa.me/4915238931238" class="cta-bar__link" target="_blank" rel="noopener">
-      💅 Jetzt Termin buchen
+<!-- ============================================================
+     HEADER
+     ============================================================ -->
+<header class="site" id="header">
+  <div class="wrap bar">
+    <a href="#top" class="brand" aria-label="OG Nails — Startseite">
+      <svg class="mark" aria-hidden="true"><use href="#og-mark"/></svg>
+      <span class="word">
+        <span class="name">OG <em>Nails</em></span>
+        <span class="loc">Simbach am Inn</span>
+      </span>
     </a>
+    <nav class="primary" aria-label="Hauptnavigation">
+      <a href="#leistungen">Leistungen</a>
+      <a href="#ueber-mich">Über mich</a>
+      <a href="#galerie">Galerie</a>
+      <a href="#bewertungen">Bewertungen</a>
+      <a href="#kontakt">Kontakt</a>
+      <a href="#kontakt" class="btn btn-rose" style="font-size: 14px; padding: 6px">
+        Termin buchen
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path class="arr" d="M5 12h14M13 6l6 6-6 6"/></svg>
+      </a>
+    </nav>
+    <button class="menu-btn" aria-label="Menü" id="menuBtn"><span></span></button>
+  </div>
+</header>
+
+<nav class="mobile-menu" id="mobileMenu" aria-label="Mobile Navigation">
+  <a href="#leistungen">Leistungen</a>
+  <a href="#ueber-mich">Über mich</a>
+  <a href="#galerie">Galerie</a>
+  <a href="#bewertungen">Bewertungen</a>
+  <a href="#kontakt">Kontakt</a>
+  <a href="https://wa.me/4915238931238" class="btn btn-rose">Termin buchen via WhatsApp</a>
+</nav>
+
+<!-- ============================================================
+     HERO
+     ============================================================ -->
+<section class="hero" id="top">
+  <div class="hero-bg">
+    <div class="glow a"></div>
+    <div class="glow b"></div>
+    <div class="lines"></div>
+  </div>
+  <div class="wrap hero-grid">
+    <div class="hero-copy">
+      <span class="eyebrow reveal">Nageldesign · Studio · Olga Görzen</span>
+      <h1 class="reveal d2">Nageldesign,<br>das man sieht —<br><em>und das hält.</em></h1>
+      <p class="lede hero-sub reveal d3">Persönliche Termine in einem warmen, ruhigen Studio in der Münchner Straße. Jedes Set wird individuell auf deine Nagelform abgestimmt — mit hochwertigen Materialien und über fünf Jahren Erfahrung.</p>
+      <div class="hero-ctas reveal d4">
+        <a href="https://wa.me/4915238931238?text=Hallo%20Olga,%20ich%20m%C3%B6chte%20einen%20Termin%20buchen." class="btn btn-rose">
+          Termin buchen
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path class="arr" d="M5 12h14M13 6l6 6-6 6"/></svg>
+        </a>
+        <a href="#leistungen" class="btn btn-ghost desktop-only">Leistungen ansehen</a>
+      </div>
+      <div class="hero-stats reveal d5">
+        <div class="stat">
+          <div class="num">5<em>+</em></div>
+          <div class="lbl">Jahre Erfahrung</div>
+        </div>
+        <div class="stat">
+          <div class="num">150<em>+</em></div>
+          <div class="lbl">Zufriedene Kundinnen</div>
+        </div>
+        <div class="stat">
+          <div class="num"><span class="stars">★★★★★</span></div>
+          <div class="lbl">5.0 Bewertung</div>
+        </div>
+      </div>
+    </div>
+
+    <div class="hero-visual reveal d3">
+      <div class="photo frame"></div>
+      <div class="photo main"><img src="assets/nails-13.jpg" alt="Sanfte rosa Maniküre mit goldenen Sternen" loading="eager"/></div>
+      <div class="photo alt"><img src="assets/nails-03.jpg" alt="Französische Maniküre mit weißer Spitze"/></div>
+    </div>
   </div>
 
-  <!-- WhatsApp Float Button -->
-  <a href="https://wa.me/4915238931238" class="whatsapp-float" target="_blank" rel="noopener" aria-label="WhatsApp Chat">
-    <svg viewBox="0 0 24 24" fill="white" width="28" height="28">
-      <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
-    </svg>
-  </a>
+  <div class="scroll-cue"><span>scrollen</span><span class="line"></span></div>
+</section>
 
-  <script src="js/main.js"></script>
+<!-- ============================================================
+     MARQUEE
+     ============================================================ -->
+<div class="marquee" aria-hidden="true">
+  <div class="marquee-track">
+    <span>Maniküre <i class="dot"></i></span>
+    <span>Gelverstärkung <i class="dot"></i></span>
+    <span>French <i class="dot"></i></span>
+    <span>Chrom &amp; Glanz <i class="dot"></i></span>
+    <span>Individuelles Design <i class="dot"></i></span>
+    <span>Nagelverlängerung <i class="dot"></i></span>
+    <span>Maniküre <i class="dot"></i></span>
+    <span>Gelverstärkung <i class="dot"></i></span>
+    <span>French <i class="dot"></i></span>
+    <span>Chrom &amp; Glanz <i class="dot"></i></span>
+    <span>Individuelles Design <i class="dot"></i></span>
+    <span>Nagelverlängerung <i class="dot"></i></span>
+  </div>
+</div>
 
-  <script type="application/ld+json">
-  {
-    "@context": "https://schema.org",
-    "@type": "NailSalon",
-    "name": "OG Nails",
-    "description": "Professionelles Nageldesign in Simbach am Inn — Gelnägel, Verlängerungen und Nagelreparatur von Olga Görzen.",
-    "url": "https://ognail-simbach.de",
-    "telephone": "+4915238931238",
-    "email": "og.nails.simbach@gmail.com",
-    "address": {
-      "@type": "PostalAddress",
-      "streetAddress": "Münchner Str. 81",
-      "addressLocality": "Simbach am Inn",
-      "postalCode": "84359",
-      "addressCountry": "DE"
-    },
-    "geo": {
-      "@type": "GeoCoordinates",
-      "latitude": 48.263,
-      "longitude": 13.026
-    },
-    "openingHoursSpecification": [{
-      "@type": "OpeningHoursSpecification",
-      "dayOfWeek": ["Monday","Tuesday","Wednesday","Thursday","Friday"],
-      "opens": "09:00",
-      "closes": "16:00"
-    }],
-    "priceRange": "€€",
-    "sameAs": ["https://instagram.com/ognails.simbach"]
-  }
-  </script>
+<!-- ============================================================
+     LEISTUNGEN
+     ============================================================ -->
+<section id="leistungen" class="section-tan">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Leistungen &amp; Preise</span>
+      <h2>Eine kleine Karte — <em>für deine Hände.</em></h2>
+      <p class="lede" style="text-align:center">Klassische Pflege, sauber gearbeitete Gelverstärkung und persönliches Design. Termine ab 30 Minuten — Beratung ist immer inklusive.</p>
+    </div>
+
+    <div class="menu-card reveal d2">
+      <div class="menu-section">
+        <div class="menu-section-title">
+          <span class="n">i.</span>
+          <h3>Maniküre</h3>
+        </div>
+        <div class="menu-row">
+          <span class="name">Klassische Maniküre</span>
+          <span class="desc">— pflegend, in Ruhe</span>
+          <span class="leader"></span>
+          <span class="price">30 €</span>
+        </div>
+      </div>
+
+      <div class="menu-section">
+        <div class="menu-section-title">
+          <span class="n">ii.</span>
+          <h3>Maniküre mit Gelverstärkung</h3>
+        </div>
+        <div class="menu-row">
+          <span class="name">Kurz / Mittel</span>
+          <span class="leader"></span>
+          <span class="price">55 €</span>
+        </div>
+        <div class="menu-row">
+          <span class="name">Lang</span>
+          <span class="leader"></span>
+          <span class="price">60 €</span>
+        </div>
+        <div class="menu-row">
+          <span class="name">+ Farbe · Kurz</span>
+          <span class="leader"></span>
+          <span class="price">60 €</span>
+        </div>
+        <div class="menu-row">
+          <span class="name">+ Farbe · Lang</span>
+          <span class="leader"></span>
+          <span class="price">65 €</span>
+        </div>
+        <div class="menu-row">
+          <span class="name">+ Design · Kurz</span>
+          <span class="desc">— French, Chrom, Glitzer, Motiv</span>
+          <span class="leader"></span>
+          <span class="price">65 €</span>
+        </div>
+        <div class="menu-row">
+          <span class="name">+ Design · Lang</span>
+          <span class="leader"></span>
+          <span class="price">70 €</span>
+        </div>
+      </div>
+
+      <div class="menu-section">
+        <div class="menu-section-title">
+          <span class="n">iii.</span>
+          <h3>Erweiterungen</h3>
+        </div>
+        <div class="menu-row">
+          <span class="name">Nagelverlängerung</span>
+          <span class="desc">— als Aufpreis zu jeder Behandlung</span>
+          <span class="leader"></span>
+          <span class="price"><em>+</em>10 €</span>
+        </div>
+        <div class="menu-row">
+          <span class="name">Nagelreparatur</span>
+          <span class="desc">— pro Nagel</span>
+          <span class="leader"></span>
+          <span class="price">5 €</span>
+        </div>
+      </div>
+
+      <div class="menu-extras">
+        <span class="pill"><em>✦</em> Beratung kostenlos</span>
+        <span class="pill"><em>✦</em> Stornierung bis 24h vorher</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     ÜBER MICH
+     ============================================================ -->
+<section id="ueber-mich">
+  <div class="wrap">
+    <div class="about-grid">
+      <div class="about-work reveal">
+        <div class="aw-photo aw-a"><img src="assets/nails-08.jpg" alt="Nude Nägel mit goldenen Ornamenten — OG Nails"/></div>
+        <div class="aw-photo aw-b"><img src="assets/nails-02.jpg" alt="Rotes French über nudefarbenem Bett — OG Nails"/></div>
+        <div class="aw-photo aw-c"><img src="assets/nails-11.jpg" alt="Helles Rosa mit goldenen Sternen — OG Nails"/></div>
+        <span class="aw-tag"><i></i>Arbeiten aus dem Studio</span>
+      </div>
+      <div class="about-text reveal d2">
+        <span class="eyebrow">Über mich</span>
+        <h2 style="margin-top:14px">Fünf Jahre.<br>Ein Stuhl. <em>Volle Aufmerksamkeit.</em></h2>
+        <p class="lede" style="margin-top:24px">Bei OG Nails bekommst du keinen Fließbandtermin: Wir nehmen uns Zeit, sprechen über deine Nagelform und deinen Alltag, und finden die richtige Lösung — egal ob dezente Pflege oder ein auffälliges Set. Die Arbeit zählt, nicht das Tempo.</p>
+        <p class="lede">Ich arbeite ausschließlich mit hochwertigen Materialien, die deine Naturnägel schonen und lange halten. Mein Anspruch ist einfach: Du sollst dich beim Reingehen wohlfühlen — und beim Rausgehen noch ein bisschen wohler.</p>
+
+        <div class="usps">
+          <div class="usp">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 2l2.39 5.18L20 8.27l-4 3.9.94 5.83L12 15l-4.94 3 .94-5.83-4-3.9 5.61-1.09L12 2z"/></svg>
+            <h4>5+ Jahre</h4>
+            <p>Erfahrung mit Hand- und Naturnagelpflege seit 2020.</p>
+          </div>
+          <div class="usp">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M12 4c-3 0-5 2-5 5 0 4 5 11 5 11s5-7 5-11c0-3-2-5-5-5z"/><circle cx="12" cy="9" r="2"/></svg>
+            <h4>Individuell</h4>
+            <p>Jedes Set wird auf deine Nagelform &amp; deinen Stil abgestimmt.</p>
+          </div>
+          <div class="usp">
+            <svg class="ico" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.4"><path d="M3 8l9-5 9 5-9 5-9-5z"/><path d="M3 14l9 5 9-5"/></svg>
+            <h4>Hochwertig</h4>
+            <p>Markenprodukte, schonende Technik, lange Haltbarkeit.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     GALERIE
+     ============================================================ -->
+<section id="galerie" class="section-tan">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Galerie · Aktuelle Arbeiten</span>
+      <h2>Lieblingssets <em>aus dem Studio.</em></h2>
+    </div>
+    <div class="gallery reveal d2">
+      <a class="g g1" href="#"><img src="assets/nails-01.jpg" alt="Rosa Maniküre mit Glitzerakzent und feinem Design"/></a>
+      <a class="g g2" href="#"><img src="assets/nails-02.jpg" alt="Rotes French mit nudefarbenem Bett"/></a>
+      <a class="g g3" href="#"><img src="assets/nails-04.jpg" alt="Rosa Maniküre mit silbernem Leoparden-Akzent"/></a>
+      <a class="g g4" href="#"><img src="assets/nails-05.jpg" alt="Nude-Tone mit Leoparden-French in Braun"/></a>
+      <a class="g g5" href="#"><img src="assets/nails-08.jpg" alt="Nude-Nägel mit goldenen Ornamenten"/></a>
+      <a class="g g6" href="#"><img src="assets/nails-11.jpg" alt="Helles Rosa mit goldenen Sternen"/></a>
+    </div>
+    <p style="text-align:center;margin-top:36px;font-size:13px;color:var(--mocha-soft);letter-spacing:.04em">
+      Mehr Sets auf Instagram <a href="https://instagram.com/ognails.simbach" style="color:var(--rose-deep);font-weight:600;border-bottom:1px solid var(--rose);padding-bottom:1px">@ognails.simbach</a>
+    </p>
+  </div>
+</section>
+
+<!-- ============================================================
+     BEWERTUNGEN
+     ============================================================ -->
+<section id="bewertungen">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Bewertungen · 5.0</span>
+      <h2>Was Kundinnen <em>sagen.</em></h2>
+    </div>
+
+    <div class="review-grid">
+      <article class="review reveal">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Olga ist die beste! Super liebenswert, nimmt sich Zeit und das Ergebnis hält ewig. Ich gehe nirgendwo anders mehr hin.</p>
+        <div class="person">
+          <div class="avatar">S</div>
+          <div class="who">
+            <span class="n">sylviai.1</span>
+            <span class="h">Stammkundin · Simbach</span>
+          </div>
+        </div>
+      </article>
+      <article class="review reveal d2">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Tolle Atmosphäre, sehr entspannt und der Preis ist absolut fair für die Qualität. Designs sind genau wie besprochen — danke!</p>
+        <div class="person">
+          <div class="avatar">A</div>
+          <div class="who">
+            <span class="n">alexee_92</span>
+            <span class="h">Empfehlung · Braunau</span>
+          </div>
+        </div>
+      </article>
+      <article class="review reveal d3">
+        <div class="stars">★★★★★</div>
+        <p class="quote">Endlich Nägel, die so aussehen, wie ich sie auf Instagram sehe. Olga hört wirklich zu — und arbeitet super sauber.</p>
+        <div class="person">
+          <div class="avatar">L</div>
+          <div class="who">
+            <span class="n">Laura M.</span>
+            <span class="h">Neukundin · Pocking</span>
+          </div>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     KONTAKT
+     ============================================================ -->
+<section id="kontakt" class="section-tan">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <span class="eyebrow">Kontakt &amp; Termin</span>
+      <h2>Schreib mir <em>einen kurzen Gruß.</em></h2>
+      <p class="lede" style="text-align:center">Am schnellsten geht's per WhatsApp — du kannst auch das Formular nutzen. Ich melde mich meist innerhalb von wenigen Stunden zurück.</p>
+    </div>
+
+    <div class="contact-grid">
+      <div class="reveal">
+        <h3 style="font-size:22px">Studio Simbach</h3>
+        <div class="info-list">
+          <div class="info">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M12 22s-7-7.58-7-13a7 7 0 0114 0c0 5.42-7 13-7 13z"/><circle cx="12" cy="9" r="2.5"/></svg></span>
+            <div class="t">
+              <div class="lbl">Adresse</div>
+              <div class="v">Münchner Str. 81<br>84359 Simbach am Inn</div>
+            </div>
+          </div>
+          <div class="info">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72 12.84 12.84 0 00.7 2.81 2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45 12.84 12.84 0 002.81.7 2 2 0 011.72 2z"/></svg></span>
+            <div class="t">
+              <div class="lbl">Telefon · WhatsApp</div>
+              <div class="v"><a href="tel:+4915238931238">+49 1523 8931238</a></div>
+            </div>
+          </div>
+          <div class="info">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></svg></span>
+            <div class="t">
+              <div class="lbl">E-Mail</div>
+              <div class="v"><a href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a></div>
+            </div>
+          </div>
+          <div class="info">
+            <span class="ico"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></span>
+            <div class="t">
+              <div class="lbl">Instagram</div>
+              <div class="v"><a href="https://instagram.com/ognails.simbach">@ognails.simbach</a></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="hours">
+          <div style="font-size:11px;letter-spacing:.24em;text-transform:uppercase;color:var(--mocha-soft);margin-bottom:14px;font-weight:600">Öffnungszeiten</div>
+          <div class="row"><span>Montag – Freitag</span><span>09:00 – 16:00</span></div>
+          <div class="row closed"><span>Samstag</span><span>geschlossen</span></div>
+          <div class="row closed"><span>Sonntag</span><span>geschlossen</span></div>
+        </div>
+      </div>
+
+      <form class="booking reveal d2" id="bookForm" novalidate>
+        <div class="row">
+          <label>Name
+            <input type="text" name="name" required placeholder="Dein Name"/>
+          </label>
+          <label>Telefon
+            <input type="tel" name="tel" required placeholder="z. B. 0151 …"/>
+          </label>
+        </div>
+        <div class="row">
+          <label>E-Mail
+            <input type="email" name="email" required placeholder="du@beispiel.de"/>
+          </label>
+          <label>Wunschtermin
+            <input type="date" name="date" required/>
+          </label>
+        </div>
+        <label>Leistung
+          <select name="service" required>
+            <option value="">Bitte wählen …</option>
+            <option>Klassische Maniküre (30 €)</option>
+            <option>Maniküre + Gelverstärkung kurz/mittel (55 €)</option>
+            <option>Maniküre + Gelverstärkung lang (60 €)</option>
+            <option>+ Farbe (kurz 60 € / lang 65 €)</option>
+            <option>+ Design (kurz 65 € / lang 70 €)</option>
+            <option>Nagelverlängerung (+10 €)</option>
+            <option>Nagelreparatur (5 €)</option>
+            <option>Beratungstermin</option>
+          </select>
+        </label>
+        <label>Nachricht
+          <textarea name="message" placeholder="Wünsche, Inspiration, Allergien …"></textarea>
+        </label>
+        <div class="submit">
+          <button type="submit" class="btn btn-rose">
+            Termin anfragen
+            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path class="arr" d="M5 12h14M13 6l6 6-6 6"/></svg>
+          </button>
+          <a href="https://wa.me/4915238931238" class="btn btn-ghost">Lieber per WhatsApp</a>
+        </div>
+        <p class="note" id="formNote">Mit dem Absenden stimmst du der Kontaktaufnahme zu. Deine Daten werden ausschließlich zur Terminanfrage verwendet.</p>
+      </form>
+    </div>
+  </div>
+</section>
+
+<!-- ============================================================
+     MAP
+     ============================================================ -->
+<div class="map" aria-label="Karte — Münchner Straße 81, Simbach am Inn">
+  <iframe
+    title="OG Nails Simbach Standort"
+    src="https://www.openstreetmap.org/export/embed.html?bbox=13.0150%2C48.2640%2C13.0350%2C48.2740&layer=mapnik&marker=48.2690%2C13.0250"
+    loading="lazy"></iframe>
+  <span class="pin">
+    <svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><circle cx="12" cy="12" r="6"/></svg>
+    Münchner Str. 81 · Simbach
+  </span>
+</div>
+
+<!-- ============================================================
+     FOOTER
+     ============================================================ -->
+<footer class="site">
+  <div class="wrap">
+    <div class="top">
+      <div>
+        <a href="#top" class="brand">
+          <svg class="mark" style="color:var(--cream)" aria-hidden="true"><use href="#og-mark"/></svg>
+          <span class="word">
+            <span class="name">OG <em>Nails</em></span>
+            <span class="loc">Simbach am Inn</span>
+          </span>
+        </a>
+        <p style="color:#cdbfb2;font-size:14px;margin-top:18px;max-width:32ch;line-height:1.65">Persönliches Nageldesign in der Münchner Straße — seit 2020.</p>
+        <div class="social">
+          <a href="https://instagram.com/ognails.simbach" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/4915238931238" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 003.6 17l-1.1 4.2 4.3-1.1A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 1112 20zm4.5-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.1-.5 0a6.6 6.6 0 01-3.3-2.9c-.2-.4 0-.4.2-.6l.4-.4.2-.4v-.4l-.6-1.6c-.2-.4-.3-.3-.5-.3h-.4a.8.8 0 00-.6.3 2.5 2.5 0 00-.8 1.9 4.4 4.4 0 00.9 2.3 9.8 9.8 0 003.9 3.4c.5.2 1 .3 1.3.4a3.2 3.2 0 001.5 0 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c-.1-.1-.2-.2-.4-.3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="#leistungen">Leistungen</a></li>
+          <li><a href="#ueber-mich">Über mich</a></li>
+          <li><a href="#galerie">Galerie</a></li>
+          <li><a href="#bewertungen">Bewertungen</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Kontakt</h5>
+        <ul>
+          <li><a href="tel:+4915238931238">+49 1523 8931238</a></li>
+          <li><a href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a></li>
+          <li>Münchner Str. 81<br>84359 Simbach am Inn</li>
+        </ul>
+      </div>
+      <div class="col-legal">
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
+      </div>
+    </div>
+    <div class="bottom">
+      <span>© 2026 OG Nails · Olga Görzen. Alle Rechte vorbehalten.</span>
+      <span class="legal">
+        <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
+
+<!-- WhatsApp FAB -->
+<a class="fab" href="https://wa.me/4915238931238" aria-label="WhatsApp Kontakt">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 003.6 17l-1.1 4.2 4.3-1.1A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 1112 20zm4.5-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.1-.5 0a6.6 6.6 0 01-3.3-2.9c-.2-.4 0-.4.2-.6l.4-.4.2-.4v-.4l-.6-1.6c-.2-.4-.3-.3-.5-.3h-.4a.8.8 0 00-.6.3 2.5 2.5 0 00-.8 1.9 4.4 4.4 0 00.9 2.3 9.8 9.8 0 003.9 3.4c.5.2 1 .3 1.3.4a3.2 3.2 0 001.5 0 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c-.1-.1-.2-.2-.4-.3z"/></svg>
+</a>
+
+<script>
+  // mobile menu
+  const menuBtn = document.getElementById('menuBtn');
+  const mobileMenu = document.getElementById('mobileMenu');
+  menuBtn.addEventListener('click', () => {
+    document.body.classList.toggle('menu-open');
+  });
+  mobileMenu.querySelectorAll('a').forEach(a => a.addEventListener('click', () => document.body.classList.remove('menu-open')));
+
+  // header shadow on scroll
+  const header = document.getElementById('header');
+  const onScroll = () => {
+    if (window.scrollY > 20) {
+      header.style.background = 'rgba(250,247,244,.92)';
+      header.style.borderBottomColor = '#3d302722';
+    } else {
+      header.style.background = 'rgba(250,247,244,.72)';
+      header.style.borderBottomColor = '#3d302714';
+    }
+  };
+  window.addEventListener('scroll', onScroll, {passive:true});
+  onScroll();
+
+  // reveal on scroll
+  const io = new IntersectionObserver((entries) => {
+    entries.forEach(e => {
+      if (e.isIntersecting) {
+        e.target.classList.add('in');
+        io.unobserve(e.target);
+      }
+    });
+  }, {threshold:.12, rootMargin:'0px 0px -40px 0px'});
+  document.querySelectorAll('.reveal').forEach(el => io.observe(el));
+
+  // active nav on scroll
+  const navLinks = document.querySelectorAll('nav.primary a[href^="#"]');
+  const sections = [...document.querySelectorAll('section[id]')];
+  const setActive = () => {
+    const y = window.scrollY + 120;
+    let cur = sections[0]?.id;
+    sections.forEach(s => { if (s.offsetTop <= y) cur = s.id; });
+    navLinks.forEach(l => l.classList.toggle('active', l.getAttribute('href') === '#' + cur));
+  };
+  window.addEventListener('scroll', setActive, {passive:true});
+  setActive();
+
+  // form validation
+  const form = document.getElementById('bookForm');
+  const note = document.getElementById('formNote');
+  form.addEventListener('submit', (e) => {
+    e.preventDefault();
+    let ok = true;
+    form.querySelectorAll('[required]').forEach(f => {
+      if (!f.value || (f.type === 'email' && !/^[^@\s]+@[^@\s]+\.[^@\s]+$/.test(f.value))) {
+        f.classList.add('invalid');
+        ok = false;
+      } else {
+        f.classList.remove('invalid');
+      }
+    });
+    if (!ok) {
+      note.style.color = '#b91d1d';
+      note.textContent = 'Bitte fülle die hervorgehobenen Felder aus.';
+      return;
+    }
+    note.style.color = 'var(--rose-deep)';
+    note.textContent = 'Danke! Ich melde mich innerhalb von wenigen Stunden zurück. 💌';
+    form.reset();
+  });
+</script>
+
 </body>
 </html>

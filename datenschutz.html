@@ -1,335 +1,280 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Datenschutzerklärung — OG Nails</title>
-  <meta name="robots" content="noindex, follow">
+<meta charset="utf-8" />
+<title>Datenschutzerklärung — OG Nails Simbach am Inn</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex, follow" />
+<meta name="description" content="Datenschutzerklärung von OG Nails — Nageldesign in Simbach am Inn." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf7f4;
+    --cream-2:#f3ede6;
+    --rose:#c9a88c;
+    --rose-deep:#b48d6e;
+    --mocha:#3d3027;
+    --mocha-soft:#7a6e63;
+    --gold:#d4af37;
+    --line:#3d302714;
+    --line-strong:#3d302726;
+    --header-h:78px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth;scroll-padding-top:calc(var(--header-h) + 20px)}
+  body{margin:0;background:var(--cream);color:var(--mocha);font-family:'Nunito',system-ui,sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  a.link{color:var(--rose-deep);border-bottom:1px solid var(--rose);padding-bottom:1px;transition:color .2s, border-color .2s}
+  a.link:hover{color:var(--mocha);border-bottom-color:var(--mocha)}
+  .wrap{max-width:780px;margin:0 auto;padding:0 32px}
+  .wrap-wide{max-width:1240px;margin:0 auto;padding:0 32px}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  /* ===== HEADER ===== */
+  header.site{position:fixed;inset:0 0 auto 0;height:var(--header-h);z-index:50;backdrop-filter:saturate(1.2) blur(14px);-webkit-backdrop-filter:saturate(1.2) blur(14px);background:rgba(250,247,244,.86);border-bottom:1px solid var(--line)}
+  header.site .bar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:14px;color:var(--mocha)}
+  .brand .mark{width:42px;height:42px;flex:none}
+  .brand .word{display:flex;flex-direction:column;line-height:1}
+  .brand .word .name{font-family:'Playfair Display';font-weight:500;font-size:22px}
+  .brand .word .name em{font-style:italic;color:var(--rose-deep);font-weight:400}
+  .brand .word .loc{font-size:9.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--mocha-soft);margin-top:3px;font-weight:600}
+  .back{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--mocha);font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid var(--line-strong);transition:background .2s, border-color .2s}
+  .back:hover{background:#3d30270a;border-color:var(--mocha)}
+  .back svg{transition:transform .2s}
+  .back:hover svg{transform:translateX(-3px)}
 
-  <link rel="stylesheet" href="css/style.css?v=3">
+  /* ===== HERO ===== */
+  .legal-hero{padding:calc(var(--header-h) + 90px) 0 60px;text-align:center;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .legal-hero .glow{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(80px);opacity:.45;background:radial-gradient(circle,#e6d5c4 0%,transparent 70%);top:-260px;left:50%;transform:translateX(-50%);pointer-events:none}
+  .eyebrow{font-family:'Nunito';font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--rose-deep);display:inline-flex;align-items:center;gap:10px;position:relative;z-index:1}
+  .eyebrow::before,.eyebrow::after{content:"";width:22px;height:1px;background:var(--rose)}
+  h1{font-family:'Playfair Display',serif;font-weight:500;letter-spacing:-.012em;font-size:clamp(40px,5.4vw,68px);line-height:1.02;margin:18px 0 14px;position:relative;z-index:1}
+  h1 em{font-style:italic;color:var(--rose-deep)}
+  .legal-hero .meta{font-size:13px;color:var(--mocha-soft);letter-spacing:.04em;position:relative;z-index:1}
 
-  <style>
-    .legal-page {
-      padding-top: calc(var(--header-h) + 3rem);
-      padding-bottom: 5rem;
-      min-height: 100vh;
-    }
+  /* ===== TOC ===== */
+  .toc{background:var(--cream-2);border:1px solid var(--line);border-radius:8px;padding:28px 32px;margin:48px 0 24px}
+  .toc h4{font-family:'Nunito';font-size:11px;letter-spacing:.32em;text-transform:uppercase;color:var(--mocha-soft);margin:0 0 16px;font-weight:600}
+  .toc ol{margin:0;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:8px 24px;counter-reset:toc}
+  .toc ol li{counter-increment:toc;font-size:14px}
+  .toc ol li a{display:flex;align-items:baseline;gap:12px;padding:6px 0;color:var(--mocha);transition:color .2s}
+  .toc ol li a::before{content:counter(toc,decimal-leading-zero);font-family:'Playfair Display';font-style:italic;color:var(--rose-deep);font-size:13px;min-width:22px}
+  .toc ol li a:hover{color:var(--rose-deep)}
 
-    .legal-page__back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: var(--fs-sm);
-      color: var(--clr-primary-dark);
-      font-weight: 600;
-      margin-bottom: 2.5rem;
-      transition: gap var(--transition);
-    }
+  /* ===== CONTENT ===== */
+  main{padding:40px 0 60px}
+  main h2{font-family:'Playfair Display',serif;font-weight:500;font-size:26px;letter-spacing:-.005em;margin:48px 0 14px;padding-bottom:14px;border-bottom:1px dashed var(--line-strong);display:flex;align-items:baseline;gap:14px;scroll-margin-top:calc(var(--header-h) + 20px)}
+  main h2 .n{font-family:'Playfair Display';font-style:italic;color:var(--rose-deep);font-size:15px;font-weight:400}
+  main h2:first-of-type{margin-top:0}
+  main p{margin:0 0 16px;color:var(--mocha);max-width:68ch}
+  main strong{font-weight:600;color:var(--mocha)}
+  main .addr{font-style:normal;display:block;line-height:1.75;margin:6px 0 16px}
+  main ul.rights{margin:14px 0 22px;padding:0;list-style:none;display:grid;grid-template-columns:1fr 1fr;gap:10px}
+  main ul.rights li{position:relative;padding:12px 14px 12px 36px;background:var(--cream-2);border:1px solid var(--line);border-radius:6px;font-size:14px}
+  main ul.rights li::before{content:"✓";position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--rose-deep);font-weight:600}
+  .callout{background:var(--cream-2);border:1px solid var(--line);border-left:3px solid var(--rose);border-radius:6px;padding:22px 24px;margin:24px 0;font-size:15px}
+  .callout p:last-child{margin-bottom:0}
+  .basis{font-size:13px;color:var(--mocha-soft);font-style:italic;margin:8px 0 16px;padding-left:14px;border-left:1px solid var(--rose)}
 
-    .legal-page__back:hover {
-      gap: 0.75rem;
-    }
+  /* ===== FOOTER ===== */
+  footer.site{background:var(--mocha);color:var(--cream);padding:64px 0 28px;margin-top:80px}
+  footer.site .top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid #cdbfb226}
+  footer.site .brand{color:var(--cream)}
+  footer.site .brand .word .name em{color:var(--rose)}
+  footer.site .brand .word .loc{color:#cdbfb2}
+  footer.site h5{font-family:'Playfair Display';font-weight:500;font-size:16px;margin:0 0 18px;color:var(--cream)}
+  footer.site ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+  footer.site ul a{font-size:14px;color:#cdbfb2;transition:color .2s}
+  footer.site ul a:hover{color:var(--rose)}
+  footer.site .social{display:flex;gap:12px;margin-top:14px}
+  footer.site .social a{width:38px;height:38px;border-radius:50%;border:1px solid #cdbfb244;display:flex;align-items:center;justify-content:center;color:#cdbfb2;transition:all .25s}
+  footer.site .social a:hover{background:var(--rose);color:#fff;border-color:transparent}
+  footer.site .bottom{padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;color:#cdbfb2}
+  footer.site .bottom .legal{display:flex;gap:18px}
 
-    .legal-page__title {
-      font-family: var(--ff-heading);
-      font-size: var(--fs-3xl);
-      color: var(--clr-text);
-      margin-bottom: 0.5rem;
-    }
-
-    .legal-page__updated {
-      font-size: var(--fs-xs);
-      color: var(--clr-text-light);
-      margin-bottom: 3rem;
-    }
-
-    .legal-section {
-      margin-bottom: 2.5rem;
-    }
-
-    .legal-section h2 {
-      font-family: var(--ff-heading);
-      font-size: var(--fs-xl);
-      color: var(--clr-text);
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--clr-border);
-    }
-
-    .legal-section h3 {
-      font-family: var(--ff-heading);
-      font-size: var(--fs-base);
-      font-weight: 600;
-      color: var(--clr-text);
-      margin: 1.25rem 0 0.5rem;
-    }
-
-    .legal-section p,
-    .legal-section address,
-    .legal-section li {
-      font-size: var(--fs-sm);
-      color: var(--clr-text-light);
-      line-height: 1.8;
-      font-style: normal;
-      margin-bottom: 0.5rem;
-    }
-
-    .legal-section ul {
-      list-style: disc;
-      padding-left: 1.5rem;
-      margin-bottom: 0.75rem;
-    }
-
-    .legal-section a {
-      color: var(--clr-primary-dark);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .legal-section a:hover {
-      color: var(--clr-text);
-    }
-
-    .legal-max {
-      max-width: 760px;
-    }
-
-    .legal-highlight {
-      background: var(--clr-bg-alt);
-      border-left: 3px solid var(--clr-primary);
-      padding: 1rem 1.25rem;
-      border-radius: 0 var(--radius-sm) var(--radius-sm) 0;
-      margin-bottom: 1rem;
-    }
-
-    .legal-highlight p {
-      margin-bottom: 0;
-    }
-  </style>
+  @media (max-width:768px){
+    .wrap, .wrap-wide{padding:0 22px}
+    main h2{font-size:22px}
+    .toc ol, main ul.rights{grid-template-columns:1fr}
+    footer.site .top{grid-template-columns:1fr 1fr;gap:32px}
+    .back .lbl{display:none}
+  }
+</style>
 </head>
 <body>
 
-  <!-- ========== NAVIGATION ========== -->
-  <header class="header header--scrolled" id="header">
-    <nav class="nav container">
-      <a href="index.html" class="nav__logo">
-        <span class="nav__logo-text">OG <span class="nav__logo-accent">Nails</span></span>
-      </a>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="og-mark" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="0.6" opacity=".3"/>
+      <ellipse cx="78" cy="100" rx="48" ry="58" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <ellipse cx="78" cy="100" rx="42" ry="52" fill="none" stroke="currentColor" stroke-width="0.6" opacity=".4"/>
+      <path d="M 175 70 A 48 58 0 1 0 175 130 L 175 100 L 140 100" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/>
+      <line x1="140" y1="96" x2="140" y2="104" stroke="currentColor" stroke-width="3.2"/>
+      <path d="M 122 100 l 4 -4 l 4 4 l -4 4 z" fill="currentColor" opacity=".75"/>
+    </symbol>
+  </defs>
+</svg>
+
+<header class="site">
+  <div class="wrap-wide bar">
+    <a href="index.html" class="brand" aria-label="OG Nails — Startseite">
+      <svg class="mark" aria-hidden="true"><use href="#og-mark"/></svg>
+      <span class="word">
+        <span class="name">OG <em>Nails</em></span>
+        <span class="loc">Simbach am Inn</span>
+      </span>
+    </a>
+    <a href="index.html" class="back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      <span class="lbl">Zurück zur Startseite</span>
+    </a>
+  </div>
+</header>
+
+<section class="legal-hero">
+  <div class="glow"></div>
+  <div class="wrap">
+    <span class="eyebrow">Rechtliches</span>
+    <h1>Datenschutz<em>erklärung.</em></h1>
+    <p class="meta">Stand Mai 2026 · DSGVO-konform</p>
+  </div>
+</section>
+
+<main>
+  <div class="wrap">
+
+    <div class="callout">
+      <p><strong>Auf einen Blick.</strong> Diese Website verwendet keine Tracking-Cookies, keine Analyse-Tools und kein Remarketing. Es werden nur die Daten erhoben, die für den Betrieb der Website und die Bearbeitung von Kontaktanfragen technisch notwendig sind.</p>
+    </div>
+
+    <nav class="toc" aria-label="Inhaltsverzeichnis">
+      <h4>Inhalt</h4>
+      <ol>
+        <li><a href="#verantwortlich">Verantwortlicher</a></li>
+        <li><a href="#hosting">Hosting</a></li>
+        <li><a href="#fonts">Google Fonts</a></li>
+        <li><a href="#karte">Karten-Einbettung</a></li>
+        <li><a href="#formular">Kontaktformular</a></li>
+        <li><a href="#whatsapp">WhatsApp-Button</a></li>
+        <li><a href="#instagram">Instagram-Link</a></li>
+        <li><a href="#cookies">Cookies</a></li>
+        <li><a href="#rechte">Ihre Rechte</a></li>
+        <li><a href="#aenderungen">Änderungen</a></li>
+      </ol>
     </nav>
-  </header>
 
-  <!-- ========== DATENSCHUTZ ========== -->
-  <main class="legal-page">
-    <div class="container legal-max">
+    <h2 id="verantwortlich"><span class="n">i.</span>Verantwortlicher</h2>
+    <p>Verantwortliche Stelle im Sinne der DSGVO ist:</p>
+    <p>
+      <strong>Olga Görzen</strong>
+      <span class="addr">
+        OG Nails — Nagelstudio<br>
+        Münchner Str. 81<br>
+        84359 Simbach am Inn
+      </span>
+      Telefon: <a class="link" href="tel:+4915238931238">+49 1523 8931238</a><br>
+      E-Mail: <a class="link" href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a>
+    </p>
 
-      <a href="index.html" class="legal-page__back">
-        ← Zurück zur Startseite
-      </a>
+    <h2 id="hosting"><span class="n">ii.</span>Hosting</h2>
+    <p>Diese Website wird bei <strong>Vercel Inc.</strong>, 340 Pine Street, Suite 900, San Francisco, CA 94104, USA, gehostet. Beim Aufruf der Website werden automatisch technische Zugriffsdaten (IP-Adresse, Datum, Uhrzeit, aufgerufene Seite, Browser) in sogenannten Server-Logfiles gespeichert. Diese Daten werden von Vercel kurzfristig gespeichert und dienen ausschließlich der Sicherstellung des Betriebs der Website. Eine Weitergabe an Dritte findet nicht statt.</p>
+    <p class="basis">Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am störungsfreien Betrieb der Website).</p>
+    <p>Vercel hat sich dem EU-US Data Privacy Framework verpflichtet. Weitere Informationen: <a class="link" href="https://vercel.com/legal/privacy-policy">vercel.com/legal/privacy-policy</a></p>
 
-      <h1 class="legal-page__title">Datenschutzerklärung</h1>
-      <p class="legal-page__updated">Stand: April 2026</p>
+    <h2 id="fonts"><span class="n">iii.</span>Google Fonts</h2>
+    <p>Diese Website verwendet Google Fonts (Anbieter: Google Ireland Limited, Gordon House, Barrow Street, Dublin 4, Irland) zur Darstellung der Schriftarten <em>Playfair Display</em> und <em>Nunito</em>. Die Schriften werden beim Seitenaufruf von Google-Servern geladen. Dabei wird Ihre IP-Adresse an Google übertragen.</p>
+    <p class="basis">Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an einer einheitlichen, professionellen Darstellung).</p>
+    <p>Mehr Informationen: <a class="link" href="https://policies.google.com/privacy">policies.google.com/privacy</a></p>
 
-      <!-- 1. Überblick -->
-      <div class="legal-section">
-        <h2>1. Datenschutz auf einen Blick</h2>
-        <div class="legal-highlight">
-          <p>
-            Diese Website verwendet keine Tracking-Cookies, keine Analyse-Tools und kein
-            Remarketing. Es werden nur die Daten erhoben, die für den Betrieb der Website und
-            die Bearbeitung von Kontaktanfragen technisch notwendig sind.
-          </p>
+    <h2 id="karte"><span class="n">iv.</span>Karten-Einbettung</h2>
+    <p>Diese Website bindet eine interaktive Karte über <strong>OpenStreetMap</strong> (OpenStreetMap Foundation, St John's Innovation Centre, Cowley Road, Cambridge CB4 0WS, Vereinigtes Königreich) ein, um den Standort des Studios anzuzeigen. Beim Laden der Karte wird Ihre IP-Adresse an die Server von OpenStreetMap übertragen.</p>
+    <p class="basis">Rechtsgrundlage: Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Darstellung des Studio-Standorts).</p>
+    <p>Mehr Informationen: <a class="link" href="https://wiki.osmfoundation.org/wiki/Privacy_Policy">OpenStreetMap Privacy Policy</a></p>
+
+    <h2 id="formular"><span class="n">v.</span>Kontaktformular</h2>
+    <p>Wenn Sie über das Kontaktformular auf dieser Website eine Terminanfrage stellen, werden die von Ihnen angegebenen Daten (Name, Telefonnummer, E-Mail-Adresse, gewünschte Leistung, Wunschtermin und optionale Nachricht) ausschließlich zur Bearbeitung Ihrer Anfrage verwendet und per E-Mail an die Inhaberin übermittelt. Eine Weitergabe an Dritte findet nicht statt.</p>
+    <p>Ihre Daten werden gelöscht, sobald sie für die Bearbeitung Ihrer Anfrage nicht mehr erforderlich sind — spätestens jedoch nach Abschluss der Terminanfrage, sofern keine gesetzlichen Aufbewahrungspflichten entgegenstehen.</p>
+    <p class="basis">Rechtsgrundlage: Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) sowie Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).</p>
+    <p>Alternativ können Sie uns jederzeit per Telefon, E-Mail oder WhatsApp kontaktieren.</p>
+
+    <h2 id="whatsapp"><span class="n">vi.</span>WhatsApp-Button</h2>
+    <p>Diese Website enthält Links zu WhatsApp (Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland). Durch Klick auf den Button verlassen Sie unsere Website und werden zu WhatsApp weitergeleitet. Dabei gelten die Datenschutzbestimmungen von Meta: <a class="link" href="https://www.whatsapp.com/legal/privacy-policy">whatsapp.com/legal/privacy-policy</a></p>
+    <p>Daten werden erst übertragen, wenn Sie den Button aktiv anklicken.</p>
+
+    <h2 id="instagram"><span class="n">vii.</span>Instagram-Link</h2>
+    <p>Diese Website verlinkt auf unseren Instagram-Account <a class="link" href="https://instagram.com/ognails.simbach">@ognails.simbach</a> (Anbieter: Meta Platforms Ireland Limited, 4 Grand Canal Square, Dublin 2, Irland). Es handelt sich um einen einfachen Textlink — Daten werden erst übertragen, wenn Sie den Link aktiv anklicken und damit zur Instagram-Plattform wechseln. Es gelten dann die Datenschutzbestimmungen von Meta: <a class="link" href="https://privacycenter.instagram.com/policy">privacycenter.instagram.com/policy</a></p>
+
+    <h2 id="cookies"><span class="n">viii.</span>Cookies</h2>
+    <p>Diese Website setzt keine eigenen Cookies. Browser können beim Aufruf externer Dienste (Google Fonts, OpenStreetMap) technisch notwendige Session-Cookies durch den jeweiligen Drittanbieter erhalten. Diese Session-Cookies werden beim Schließen des Browsers automatisch gelöscht und enthalten keine personenbezogenen Daten.</p>
+
+    <h2 id="rechte"><span class="n">ix.</span>Ihre Rechte</h2>
+    <p>Sie haben uns gegenüber folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
+    <ul class="rights">
+      <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
+      <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
+      <li>Recht auf Löschung (Art. 17 DSGVO)</li>
+      <li>Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
+      <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
+      <li>Widerspruchsrecht (Art. 21 DSGVO)</li>
+    </ul>
+    <p>Zur Ausübung Ihrer Rechte wenden Sie sich bitte an: <a class="link" href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a></p>
+    <p>Sie haben außerdem das Recht, sich bei der zuständigen Datenschutz-Aufsichtsbehörde zu beschweren. Zuständig für Bayern ist das <strong>Bayerische Landesamt für Datenschutzaufsicht (BayLDA)</strong>, Promenade 27, 91522 Ansbach — <a class="link" href="https://www.lda.bayern.de/">lda.bayern.de</a></p>
+
+    <h2 id="aenderungen"><span class="n">x.</span>Änderungen dieser Erklärung</h2>
+    <p>Wir behalten uns vor, diese Datenschutzerklärung anzupassen, damit sie stets den aktuellen rechtlichen Anforderungen entspricht oder um Änderungen unserer Leistungen umzusetzen. Für deinen erneuten Besuch gilt dann die jeweils aktuelle Version.</p>
+
+    <div class="callout">
+      <p>Fragen zu deinen Daten oder zu dieser Erklärung? Schreib mir an <a class="link" href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a> — ich melde mich persönlich zurück.</p>
+    </div>
+
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap-wide">
+    <div class="top">
+      <div>
+        <a href="index.html" class="brand">
+          <svg class="mark" style="color:var(--cream)" aria-hidden="true"><use href="#og-mark"/></svg>
+          <span class="word">
+            <span class="name">OG <em>Nails</em></span>
+            <span class="loc">Simbach am Inn</span>
+          </span>
+        </a>
+        <p style="color:#cdbfb2;font-size:14px;margin-top:18px;max-width:32ch;line-height:1.65">Persönliches Nageldesign in der Münchner Straße — seit 2020.</p>
+        <div class="social">
+          <a href="https://instagram.com/ognails.simbach" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/4915238931238" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 003.6 17l-1.1 4.2 4.3-1.1A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 1112 20zm4.5-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.1-.5 0a6.6 6.6 0 01-3.3-2.9c-.2-.4 0-.4.2-.6l.4-.4.2-.4v-.4l-.6-1.6c-.2-.4-.3-.3-.5-.3h-.4a.8.8 0 00-.6.3 2.5 2.5 0 00-.8 1.9 4.4 4.4 0 00.9 2.3 9.8 9.8 0 003.9 3.4c.5.2 1 .3 1.3.4a3.2 3.2 0 001.5 0 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c-.1-.1-.2-.2-.4-.3z"/></svg></a>
         </div>
-        <p>
-          Die folgenden Hinweise geben einen einfachen Überblick darüber, was mit Ihren
-          personenbezogenen Daten passiert, wenn Sie diese Website besuchen. Personenbezogene
-          Daten sind alle Daten, mit denen Sie persönlich identifiziert werden können.
-        </p>
       </div>
-
-      <!-- 2. Verantwortlicher -->
-      <div class="legal-section">
-        <h2>2. Verantwortlicher</h2>
-        <p>Verantwortliche Stelle im Sinne der DSGVO ist:</p>
-        <address>
-          <strong>Olga Görzen</strong><br>
-          OG Nails — Nagelstudio<br>
-          Münchner Str. 81<br>
-          84359 Simbach am Inn<br><br>
-          Telefon: <a href="tel:+4915238931238">+49 1523 8931238</a><br>
-          E-Mail: <a href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a>
-        </address>
-      </div>
-
-      <!-- 3. Hosting -->
-      <div class="legal-section">
-        <h2>3. Hosting</h2>
-        <p>
-          Diese Website wird bei <strong>Vercel Inc.</strong>, 340 Pine Street, Suite 900,
-          San Francisco, CA 94104, USA, gehostet. Beim Aufruf unserer Website werden
-          automatisch technische Zugriffsdaten (IP-Adresse, Datum, Uhrzeit, aufgerufene Seite,
-          Browser) in sogenannten Server-Logfiles gespeichert. Diese Daten werden von Vercel
-          kurzfristig gespeichert und dienen ausschließlich der Sicherstellung des Betriebs
-          der Website. Eine Weitergabe an Dritte findet nicht statt.
-        </p>
-        <p>
-          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse am
-          störungsfreien Betrieb der Website).
-        </p>
-        <p>
-          Vercel hat sich dem EU-US Data Privacy Framework verpflichtet. Weitere Informationen:
-          <a href="https://vercel.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
-            vercel.com/legal/privacy-policy
-          </a>
-        </p>
-      </div>
-
-      <!-- 4. Google Fonts -->
-      <div class="legal-section">
-        <h2>4. Google Fonts</h2>
-        <p>
-          Diese Website verwendet Google Fonts (Anbieter: Google Ireland Limited, Gordon House,
-          Barrow Street, Dublin 4, Irland) zur Darstellung von Schriftarten. Die Schriften
-          werden beim Seitenaufruf von Google-Servern geladen. Dabei wird Ihre IP-Adresse an
-          Google übertragen.
-        </p>
-        <p>
-          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO. Unser berechtigtes Interesse
-          besteht in der einheitlichen und professionellen Darstellung der Website.
-        </p>
-        <p>
-          Mehr Informationen zum Umgang mit Nutzerdaten bei Google Fonts finden Sie in der
-          Datenschutzerklärung von Google:
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-            policies.google.com/privacy
-          </a>
-        </p>
-      </div>
-
-      <!-- 5. Google Maps -->
-      <div class="legal-section">
-        <h2>5. Google Maps</h2>
-        <p>
-          Diese Website verwendet Google Maps (Anbieter: Google Ireland Limited, Gordon House,
-          Barrow Street, Dublin 4, Irland) zur Anzeige einer interaktiven Karte. Beim Laden
-          des Kartenausschnitts wird Ihre IP-Adresse sowie Ihr Standort (sofern Sie dies in
-          Ihrem Browser erlaubt haben) an Google übertragen.
-        </p>
-        <p>
-          Rechtsgrundlage ist Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der
-          Darstellung des Standorts).
-        </p>
-        <p>
-          Mehr Informationen finden Sie in der Datenschutzerklärung von Google:
-          <a href="https://policies.google.com/privacy" target="_blank" rel="noopener noreferrer">
-            policies.google.com/privacy
-          </a>
-        </p>
-      </div>
-
-      <!-- 6. Kontaktformular / Formspree -->
-      <div class="legal-section">
-        <h2>6. Kontaktformular</h2>
-        <p>
-          Wenn Sie über das Kontaktformular auf dieser Website eine Terminanfrage stellen,
-          werden Ihre Angaben (Name, Telefonnummer, ggf. E-Mail-Adresse, gewünschte Leistung,
-          Wunschtermin und optionale Nachricht) an den Dienst <strong>Formspree</strong>
-          (Formspree Inc., 619 S. Negley Ave., Pittsburgh, PA 15232, USA) übermittelt
-          und von dort per E-Mail an uns weitergeleitet.
-        </p>
-        <p>
-          Formspree speichert eingehende Anfragen vorübergehend auf seinen Servern.
-          Formspree hat sich dem EU-US Data Privacy Framework verpflichtet. Weitere
-          Informationen:
-          <a href="https://formspree.io/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
-            formspree.io/legal/privacy-policy
-          </a>
-        </p>
-        <p>
-          Die von Ihnen übermittelten Daten werden ausschließlich zur Bearbeitung Ihrer
-          Anfrage verwendet. Eine Weitergabe an Dritte findet nicht statt.
-        </p>
-        <p>
-          Rechtsgrundlage ist Art. 6 Abs. 1 lit. b DSGVO (Vertragsanbahnung) sowie
-          Art. 6 Abs. 1 lit. f DSGVO (berechtigtes Interesse an der Beantwortung von Anfragen).
-        </p>
-        <p>
-          Alternativ können Sie uns jederzeit per Telefon oder WhatsApp kontaktieren,
-          ohne Daten über Drittdienste zu übermitteln.
-        </p>
-      </div>
-
-      <!-- 7. WhatsApp -->
-      <div class="legal-section">
-        <h2>7. WhatsApp-Button</h2>
-        <p>
-          Diese Website enthält einen Link zu WhatsApp (Meta Platforms Ireland Limited,
-          4 Grand Canal Square, Dublin 2, Irland). Durch Klick auf den Button verlassen Sie
-          unsere Website und werden zu WhatsApp weitergeleitet. Dabei gelten die
-          Datenschutzbestimmungen von Meta:
-          <a href="https://www.whatsapp.com/legal/privacy-policy" target="_blank" rel="noopener noreferrer">
-            whatsapp.com/legal/privacy-policy
-          </a>
-        </p>
-        <p>
-          Daten werden erst übertragen, wenn Sie den Button aktiv anklicken.
-        </p>
-      </div>
-
-      <!-- 8. Cookies -->
-      <div class="legal-section">
-        <h2>8. Cookies</h2>
-        <p>
-          Diese Website setzt keine eigenen Cookies. Browser können beim Aufruf externer Dienste
-          (Google Fonts, Google Maps) technisch notwendige Session-Cookies durch den jeweiligen
-          Drittanbieter erhalten. Diese Session-Cookies werden beim Schließen des Browsers
-          automatisch gelöscht und enthalten keine personenbezogenen Daten.
-        </p>
-      </div>
-
-      <!-- 9. Ihre Rechte -->
-      <div class="legal-section">
-        <h2>9. Ihre Rechte</h2>
-        <p>Sie haben gegenüber uns folgende Rechte hinsichtlich Ihrer personenbezogenen Daten:</p>
+      <div>
+        <h5>Studio</h5>
         <ul>
-          <li>Recht auf Auskunft (Art. 15 DSGVO)</li>
-          <li>Recht auf Berichtigung (Art. 16 DSGVO)</li>
-          <li>Recht auf Löschung (Art. 17 DSGVO)</li>
-          <li>Recht auf Einschränkung der Verarbeitung (Art. 18 DSGVO)</li>
-          <li>Recht auf Datenübertragbarkeit (Art. 20 DSGVO)</li>
-          <li>Recht auf Widerspruch gegen die Verarbeitung (Art. 21 DSGVO)</li>
+          <li><a href="index.html#leistungen">Leistungen</a></li>
+          <li><a href="index.html#ueber-mich">Über mich</a></li>
+          <li><a href="index.html#galerie">Galerie</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
         </ul>
-        <p>
-          Zur Ausübung Ihrer Rechte wenden Sie sich bitte an:
-          <a href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a>
-        </p>
-        <p>
-          Sie haben außerdem das Recht, sich bei der zuständigen Datenschutz-Aufsichtsbehörde
-          zu beschweren. Die zuständige Aufsichtsbehörde für Bayern ist das
-          <strong>Bayerische Landesamt für Datenschutzaufsicht (BayLDA)</strong>,
-          Promenade 27, 91522 Ansbach.
-        </p>
       </div>
-
-    </div>
-  </main>
-
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="footer__bottom">
-      <div class="container">
-        <p>&copy; 2026 OG Nails — Olga Görzen &nbsp;|&nbsp;
-          <a href="impressum.html" style="opacity:0.7; text-decoration:underline; color:inherit;">Impressum</a>
-          &nbsp;|&nbsp;
-          <a href="datenschutz.html" style="opacity:0.7; text-decoration:underline; color:inherit;">Datenschutz</a>
-        </p>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="bottom">
+      <span>© 2026 OG Nails · Olga Görzen. Alle Rechte vorbehalten.</span>
+      <span class="legal">
+        <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>

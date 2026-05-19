@@ -1,224 +1,235 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="de">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Impressum — OG Nails</title>
-  <meta name="robots" content="noindex, follow">
+<meta charset="utf-8" />
+<title>Impressum — OG Nails Simbach am Inn</title>
+<meta name="viewport" content="width=device-width,initial-scale=1" />
+<meta name="robots" content="noindex, follow" />
+<meta name="description" content="Impressum von OG Nails — Nageldesign in Simbach am Inn, Inhaberin Olga Görzen." />
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;0,600;1,400;1,500&family=Nunito:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --cream:#faf7f4;
+    --cream-2:#f3ede6;
+    --rose:#c9a88c;
+    --rose-deep:#b48d6e;
+    --mocha:#3d3027;
+    --mocha-soft:#7a6e63;
+    --gold:#d4af37;
+    --line:#3d302714;
+    --line-strong:#3d302726;
+    --header-h:78px;
+  }
+  *{box-sizing:border-box}
+  html{scroll-behavior:smooth}
+  body{margin:0;background:var(--cream);color:var(--mocha);font-family:'Nunito',system-ui,sans-serif;font-size:16px;line-height:1.7;-webkit-font-smoothing:antialiased}
+  a{color:inherit;text-decoration:none}
+  a.link{color:var(--rose-deep);border-bottom:1px solid var(--rose);padding-bottom:1px;transition:color .2s, border-color .2s}
+  a.link:hover{color:var(--mocha);border-bottom-color:var(--mocha)}
+  .wrap{max-width:780px;margin:0 auto;padding:0 32px}
+  .wrap-wide{max-width:1240px;margin:0 auto;padding:0 32px}
 
-  <!-- Fonts -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600&family=Nunito:wght@400;500;600&display=swap" rel="stylesheet">
+  /* ===== HEADER ===== */
+  header.site{position:fixed;inset:0 0 auto 0;height:var(--header-h);z-index:50;backdrop-filter:saturate(1.2) blur(14px);-webkit-backdrop-filter:saturate(1.2) blur(14px);background:rgba(250,247,244,.86);border-bottom:1px solid var(--line)}
+  header.site .bar{height:100%;display:flex;align-items:center;justify-content:space-between;gap:24px}
+  .brand{display:flex;align-items:center;gap:14px;color:var(--mocha)}
+  .brand .mark{width:42px;height:42px;flex:none}
+  .brand .word{display:flex;flex-direction:column;line-height:1}
+  .brand .word .name{font-family:'Playfair Display';font-weight:500;font-size:22px}
+  .brand .word .name em{font-style:italic;color:var(--rose-deep);font-weight:400}
+  .brand .word .loc{font-size:9.5px;letter-spacing:.36em;text-transform:uppercase;color:var(--mocha-soft);margin-top:3px;font-weight:600}
+  .back{display:inline-flex;align-items:center;gap:10px;font-size:13px;color:var(--mocha);font-weight:500;padding:8px 14px;border-radius:999px;border:1px solid var(--line-strong);transition:background .2s, border-color .2s}
+  .back:hover{background:#3d30270a;border-color:var(--mocha)}
+  .back svg{transition:transform .2s}
+  .back:hover svg{transform:translateX(-3px)}
 
-  <link rel="stylesheet" href="css/style.css?v=3">
+  /* ===== HERO ===== */
+  .legal-hero{padding:calc(var(--header-h) + 90px) 0 60px;text-align:center;border-bottom:1px solid var(--line);position:relative;overflow:hidden}
+  .legal-hero .glow{position:absolute;width:560px;height:560px;border-radius:50%;filter:blur(80px);opacity:.45;background:radial-gradient(circle,#e6d5c4 0%,transparent 70%);top:-260px;left:50%;transform:translateX(-50%);pointer-events:none}
+  .eyebrow{font-family:'Nunito';font-size:11px;font-weight:600;letter-spacing:.32em;text-transform:uppercase;color:var(--rose-deep);display:inline-flex;align-items:center;gap:10px;position:relative;z-index:1}
+  .eyebrow::before,.eyebrow::after{content:"";width:22px;height:1px;background:var(--rose)}
+  h1{font-family:'Playfair Display',serif;font-weight:500;letter-spacing:-.012em;font-size:clamp(40px,5.4vw,68px);line-height:1.02;margin:18px 0 14px;position:relative;z-index:1}
+  h1 em{font-style:italic;color:var(--rose-deep)}
+  .legal-hero .meta{font-size:13px;color:var(--mocha-soft);letter-spacing:.04em;position:relative;z-index:1}
 
-  <style>
-    .legal-page {
-      padding-top: calc(var(--header-h) + 3rem);
-      padding-bottom: 5rem;
-      min-height: 100vh;
-    }
+  /* ===== CONTENT ===== */
+  main{padding:80px 0 60px}
+  main h2{font-family:'Playfair Display',serif;font-weight:500;font-size:26px;letter-spacing:-.005em;margin:48px 0 14px;padding-bottom:14px;border-bottom:1px dashed var(--line-strong);display:flex;align-items:baseline;gap:14px}
+  main h2 .n{font-family:'Playfair Display';font-style:italic;color:var(--rose-deep);font-size:15px;font-weight:400}
+  main h2:first-of-type{margin-top:0}
+  main p{margin:0 0 16px;color:var(--mocha);max-width:64ch}
+  main strong{font-weight:600;color:var(--mocha)}
+  main .addr{font-style:normal;display:block;line-height:1.75;margin:6px 0 16px}
+  main ul{margin:0 0 18px;padding:0;list-style:none;display:flex;flex-direction:column;gap:8px}
+  main ul li{position:relative;padding-left:22px;color:var(--mocha)}
+  main ul li::before{content:"";position:absolute;left:0;top:.7em;width:10px;height:1px;background:var(--rose-deep)}
+  .callout{background:var(--cream-2);border:1px solid var(--line);border-left:3px solid var(--rose);border-radius:6px;padding:22px 24px;margin:24px 0;font-size:15px}
+  .callout p:last-child{margin-bottom:0}
 
-    .legal-page__back {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.5rem;
-      font-size: var(--fs-sm);
-      color: var(--clr-primary-dark);
-      font-weight: 600;
-      margin-bottom: 2.5rem;
-      transition: gap var(--transition);
-    }
+  /* ===== FOOTER ===== */
+  footer.site{background:var(--mocha);color:var(--cream);padding:64px 0 28px;margin-top:80px}
+  footer.site .top{display:grid;grid-template-columns:1.3fr 1fr 1fr;gap:48px;padding-bottom:40px;border-bottom:1px solid #cdbfb226}
+  footer.site .brand{color:var(--cream)}
+  footer.site .brand .word .name em{color:var(--rose)}
+  footer.site .brand .word .loc{color:#cdbfb2}
+  footer.site h5{font-family:'Playfair Display';font-weight:500;font-size:16px;margin:0 0 18px;color:var(--cream)}
+  footer.site ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:10px}
+  footer.site ul a{font-size:14px;color:#cdbfb2;transition:color .2s}
+  footer.site ul a:hover{color:var(--rose)}
+  footer.site .social{display:flex;gap:12px;margin-top:14px}
+  footer.site .social a{width:38px;height:38px;border-radius:50%;border:1px solid #cdbfb244;display:flex;align-items:center;justify-content:center;color:#cdbfb2;transition:all .25s}
+  footer.site .social a:hover{background:var(--rose);color:#fff;border-color:transparent}
+  footer.site .bottom{padding-top:22px;display:flex;justify-content:space-between;flex-wrap:wrap;gap:14px;font-size:12px;color:#cdbfb2}
+  footer.site .bottom .legal{display:flex;gap:18px}
 
-    .legal-page__back:hover {
-      gap: 0.75rem;
-    }
-
-    .legal-page__title {
-      font-family: var(--ff-heading);
-      font-size: var(--fs-3xl);
-      color: var(--clr-text);
-      margin-bottom: 0.5rem;
-    }
-
-    .legal-page__updated {
-      font-size: var(--fs-xs);
-      color: var(--clr-text-light);
-      margin-bottom: 3rem;
-    }
-
-    .legal-section {
-      margin-bottom: 2.5rem;
-    }
-
-    .legal-section h2 {
-      font-family: var(--ff-heading);
-      font-size: var(--fs-xl);
-      color: var(--clr-text);
-      margin-bottom: 0.75rem;
-      padding-bottom: 0.5rem;
-      border-bottom: 1px solid var(--clr-border);
-    }
-
-    .legal-section p,
-    .legal-section address {
-      font-size: var(--fs-sm);
-      color: var(--clr-text-light);
-      line-height: 1.8;
-      font-style: normal;
-      margin-bottom: 0.5rem;
-    }
-
-    .legal-section a {
-      color: var(--clr-primary-dark);
-      text-decoration: underline;
-      text-underline-offset: 3px;
-    }
-
-    .legal-section a:hover {
-      color: var(--clr-text);
-    }
-
-    .legal-max {
-      max-width: 760px;
-    }
-  </style>
+  @media (max-width:768px){
+    .wrap, .wrap-wide{padding:0 22px}
+    main h2{font-size:22px}
+    footer.site .top{grid-template-columns:1fr 1fr;gap:32px}
+    .back .lbl{display:none}
+  }
+</style>
 </head>
 <body>
 
-  <!-- ========== NAVIGATION ========== -->
-  <header class="header header--scrolled" id="header">
-    <nav class="nav container">
-      <a href="index.html" class="nav__logo">
-        <span class="nav__logo-text">OG <span class="nav__logo-accent">Nails</span></span>
-      </a>
-    </nav>
-  </header>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <defs>
+    <symbol id="og-mark" viewBox="0 0 200 200">
+      <circle cx="100" cy="100" r="92" fill="none" stroke="currentColor" stroke-width="0.6" opacity=".3"/>
+      <ellipse cx="78" cy="100" rx="48" ry="58" fill="none" stroke="currentColor" stroke-width="3.2"/>
+      <ellipse cx="78" cy="100" rx="42" ry="52" fill="none" stroke="currentColor" stroke-width="0.6" opacity=".4"/>
+      <path d="M 175 70 A 48 58 0 1 0 175 130 L 175 100 L 140 100" fill="none" stroke="currentColor" stroke-width="3.2" stroke-linecap="square"/>
+      <line x1="140" y1="96" x2="140" y2="104" stroke="currentColor" stroke-width="3.2"/>
+      <path d="M 122 100 l 4 -4 l 4 4 l -4 4 z" fill="currentColor" opacity=".75"/>
+    </symbol>
+  </defs>
+</svg>
 
-  <!-- ========== IMPRESSUM ========== -->
-  <main class="legal-page">
-    <div class="container legal-max">
+<header class="site">
+  <div class="wrap-wide bar">
+    <a href="index.html" class="brand" aria-label="OG Nails — Startseite">
+      <svg class="mark" aria-hidden="true"><use href="#og-mark"/></svg>
+      <span class="word">
+        <span class="name">OG <em>Nails</em></span>
+        <span class="loc">Simbach am Inn</span>
+      </span>
+    </a>
+    <a href="index.html" class="back">
+      <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M19 12H5M11 18l-6-6 6-6"/></svg>
+      <span class="lbl">Zurück zur Startseite</span>
+    </a>
+  </div>
+</header>
 
-      <a href="index.html" class="legal-page__back">
-        ← Zurück zur Startseite
-      </a>
+<section class="legal-hero">
+  <div class="glow"></div>
+  <div class="wrap">
+    <span class="eyebrow">Rechtliches</span>
+    <h1>Impressum.</h1>
+    <p class="meta">Angaben gemäß § 5 TMG · Stand Mai 2026</p>
+  </div>
+</section>
 
-      <h1 class="legal-page__title">Impressum</h1>
-      <p class="legal-page__updated">Angaben gemäß § 5 TMG</p>
+<main>
+  <div class="wrap">
 
-      <div class="legal-section">
-        <h2>Anbieter</h2>
-        <address>
-          <strong>Olga Görzen</strong><br>
-          OG Nails — Nagelstudio<br>
-          Münchner Str. 81<br>
-          84359 Simbach am Inn<br>
-          Deutschland
-        </address>
-      </div>
+    <h2><span class="n">i.</span>Anbieter</h2>
+    <p>
+      <strong>Olga Görzen</strong>
+      <span class="addr">
+        OG Nails — Nagelstudio<br>
+        Münchner Str. 81<br>
+        84359 Simbach am Inn<br>
+        Deutschland
+      </span>
+    </p>
 
-      <div class="legal-section">
-        <h2>Kontakt</h2>
-        <p>
-          Telefon: <a href="tel:+4915238931238">+49 1523 8931238</a><br>
-          E-Mail: <a href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a>
-        </p>
-      </div>
+    <h2><span class="n">ii.</span>Kontakt</h2>
+    <p>
+      Telefon: <a class="link" href="tel:+4915238931238">+49 1523 8931238</a><br>
+      E-Mail: <a class="link" href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a><br>
+      Instagram: <a class="link" href="https://instagram.com/ognails.simbach">@ognails.simbach</a>
+    </p>
 
-      <div class="legal-section">
-        <h2>Umsatzsteuer</h2>
-        <p>
-          Olga Görzen ist Kleinunternehmerin im Sinne von § 19 Abs. 1 UStG.
-          Es wird daher keine Umsatzsteuer ausgewiesen. Eine Umsatzsteuer-Identifikationsnummer
-          liegt nicht vor.
-        </p>
-      </div>
+    <h2><span class="n">iii.</span>Umsatzsteuer</h2>
+    <p>Olga Görzen ist Kleinunternehmerin im Sinne von § 19 Abs. 1 UStG. Es wird daher keine Umsatzsteuer ausgewiesen. Eine Umsatzsteuer-Identifikationsnummer liegt nicht vor.</p>
 
-      <div class="legal-section">
-        <h2>Verantwortlich für den Inhalt (§ 55 Abs. 2 RStV)</h2>
-        <address>
-          Olga Görzen<br>
-          Münchner Str. 81<br>
-          84359 Simbach am Inn
-        </address>
-      </div>
+    <h2><span class="n">iv.</span>Verantwortlich für den Inhalt</h2>
+    <p>Verantwortlich für den Inhalt nach § 55 Abs. 2 RStV:</p>
+    <p>
+      <strong>Olga Görzen</strong>
+      <span class="addr">
+        Münchner Str. 81<br>
+        84359 Simbach am Inn
+      </span>
+    </p>
 
-      <div class="legal-section">
-        <h2>Haftung für Inhalte</h2>
-        <p>
-          Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten
-          nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als
-          Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde
-          Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige
-          Tätigkeit hinweisen.
-        </p>
-        <p>
-          Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den
-          allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch
-          erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei
-          Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend
-          entfernen.
-        </p>
-      </div>
+    <h2><span class="n">v.</span>Haftung für Inhalte</h2>
+    <p>Als Diensteanbieter sind wir gemäß § 7 Abs. 1 TMG für eigene Inhalte auf diesen Seiten nach den allgemeinen Gesetzen verantwortlich. Nach §§ 8 bis 10 TMG sind wir als Diensteanbieter jedoch nicht verpflichtet, übermittelte oder gespeicherte fremde Informationen zu überwachen oder nach Umständen zu forschen, die auf eine rechtswidrige Tätigkeit hinweisen.</p>
+    <p>Verpflichtungen zur Entfernung oder Sperrung der Nutzung von Informationen nach den allgemeinen Gesetzen bleiben hiervon unberührt. Eine diesbezügliche Haftung ist jedoch erst ab dem Zeitpunkt der Kenntnis einer konkreten Rechtsverletzung möglich. Bei Bekanntwerden von entsprechenden Rechtsverletzungen werden wir diese Inhalte umgehend entfernen.</p>
 
-      <div class="legal-section">
-        <h2>Haftung für Links</h2>
-        <p>
-          Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen
-          Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr
-          übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder
-          Betreiber der Seiten verantwortlich.
-        </p>
-        <p>
-          Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße
-          überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar.
-          Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete
-          Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von
-          Rechtsverletzungen werden wir derartige Links umgehend entfernen.
-        </p>
-      </div>
+    <h2><span class="n">vi.</span>Haftung für Links</h2>
+    <p>Unser Angebot enthält Links zu externen Webseiten Dritter, auf deren Inhalte wir keinen Einfluss haben. Deshalb können wir für diese fremden Inhalte auch keine Gewähr übernehmen. Für die Inhalte der verlinkten Seiten ist stets der jeweilige Anbieter oder Betreiber der Seiten verantwortlich.</p>
+    <p>Die verlinkten Seiten wurden zum Zeitpunkt der Verlinkung auf mögliche Rechtsverstöße überprüft. Rechtswidrige Inhalte waren zum Zeitpunkt der Verlinkung nicht erkennbar. Eine permanente inhaltliche Kontrolle der verlinkten Seiten ist jedoch ohne konkrete Anhaltspunkte einer Rechtsverletzung nicht zumutbar. Bei Bekanntwerden von Rechtsverletzungen werden wir derartige Links umgehend entfernen.</p>
 
-      <div class="legal-section">
-        <h2>Urheberrecht</h2>
-        <p>
-          Die durch die Seitenbetreiber erstellten Inhalte und Werke auf diesen Seiten unterliegen
-          dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art
-          der Verwertung außerhalb der Grenzen des Urheberrechtes bedürfen der schriftlichen
-          Zustimmung des jeweiligen Autors bzw. Erstellers.
-        </p>
-      </div>
+    <h2><span class="n">vii.</span>Urheberrecht</h2>
+    <p>Die durch die Seitenbetreiberin erstellten Inhalte und Werke auf diesen Seiten unterliegen dem deutschen Urheberrecht. Die Vervielfältigung, Bearbeitung, Verbreitung und jede Art der Verwertung außerhalb der Grenzen des Urheberrechts bedürfen der schriftlichen Zustimmung der jeweiligen Autorin bzw. Erstellerin. Fotos der gezeigten Arbeiten sind Eigentum von OG Nails und dürfen nicht ohne Zustimmung weiterverwendet werden.</p>
 
-      <div class="legal-section">
-        <h2>Streitschlichtung</h2>
-        <p>
-          Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit:
-          <a href="https://ec.europa.eu/consumers/odr/" target="_blank" rel="noopener noreferrer">
-            https://ec.europa.eu/consumers/odr/
-          </a>
-        </p>
-        <p>
-          Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder
-          verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle
-          teilzunehmen.
-        </p>
-      </div>
+    <h2><span class="n">viii.</span>Streitschlichtung</h2>
+    <p>Die Europäische Kommission stellt eine Plattform zur Online-Streitbeilegung (OS) bereit: <a class="link" href="https://ec.europa.eu/consumers/odr/">ec.europa.eu/consumers/odr</a></p>
+    <p>Unsere E-Mail-Adresse finden Sie oben im Impressum. Wir sind nicht bereit oder verpflichtet, an Streitbeilegungsverfahren vor einer Verbraucherschlichtungsstelle teilzunehmen.</p>
 
+    <div class="callout">
+      <p>Bei Fragen zum Impressum oder zur Verwendung der Inhalte erreichst du mich am schnellsten per E-Mail an <a class="link" href="mailto:og.nails.simbach@gmail.com">og.nails.simbach@gmail.com</a>.</p>
     </div>
-  </main>
 
-  <!-- ========== FOOTER ========== -->
-  <footer class="footer">
-    <div class="footer__bottom">
-      <div class="container">
-        <p>&copy; 2026 OG Nails — Olga Görzen &nbsp;|&nbsp;
-          <a href="impressum.html" style="opacity:0.7; text-decoration:underline; color:inherit;">Impressum</a>
-          &nbsp;|&nbsp;
-          <a href="datenschutz.html" style="opacity:0.7; text-decoration:underline; color:inherit;">Datenschutz</a>
-        </p>
+  </div>
+</main>
+
+<footer class="site">
+  <div class="wrap-wide">
+    <div class="top">
+      <div>
+        <a href="index.html" class="brand">
+          <svg class="mark" style="color:var(--cream)" aria-hidden="true"><use href="#og-mark"/></svg>
+          <span class="word">
+            <span class="name">OG <em>Nails</em></span>
+            <span class="loc">Simbach am Inn</span>
+          </span>
+        </a>
+        <p style="color:#cdbfb2;font-size:14px;margin-top:18px;max-width:32ch;line-height:1.65">Persönliches Nageldesign in der Münchner Straße — seit 2020.</p>
+        <div class="social">
+          <a href="https://instagram.com/ognails.simbach" aria-label="Instagram"><svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.6"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor"/></svg></a>
+          <a href="https://wa.me/4915238931238" aria-label="WhatsApp"><svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M20.5 3.5A11 11 0 003.6 17l-1.1 4.2 4.3-1.1A11 11 0 1020.5 3.5zM12 20a8 8 0 01-4.1-1.1l-.3-.2-2.6.7.7-2.5-.2-.3A8 8 0 1112 20zm4.5-6c-.3-.1-1.5-.7-1.7-.8s-.4-.1-.6.1-.7.8-.8 1-.3.1-.5 0a6.6 6.6 0 01-3.3-2.9c-.2-.4 0-.4.2-.6l.4-.4.2-.4v-.4l-.6-1.6c-.2-.4-.3-.3-.5-.3h-.4a.8.8 0 00-.6.3 2.5 2.5 0 00-.8 1.9 4.4 4.4 0 00.9 2.3 9.8 9.8 0 003.9 3.4c.5.2 1 .3 1.3.4a3.2 3.2 0 001.5 0 2.4 2.4 0 001.6-1.1 1.9 1.9 0 00.1-1.1c-.1-.1-.2-.2-.4-.3z"/></svg></a>
+        </div>
+      </div>
+      <div>
+        <h5>Studio</h5>
+        <ul>
+          <li><a href="index.html#leistungen">Leistungen</a></li>
+          <li><a href="index.html#ueber-mich">Über mich</a></li>
+          <li><a href="index.html#galerie">Galerie</a></li>
+          <li><a href="index.html#kontakt">Kontakt</a></li>
+        </ul>
+      </div>
+      <div>
+        <h5>Rechtliches</h5>
+        <ul>
+          <li><a href="impressum.html">Impressum</a></li>
+          <li><a href="datenschutz.html">Datenschutz</a></li>
+        </ul>
       </div>
     </div>
-  </footer>
+    <div class="bottom">
+      <span>© 2026 OG Nails · Olga Görzen. Alle Rechte vorbehalten.</span>
+      <span class="legal">
+        <a href="impressum.html">Impressum</a><a href="datenschutz.html">Datenschutz</a>
+      </span>
+    </div>
+  </div>
+</footer>
 
 </body>
 </html>
